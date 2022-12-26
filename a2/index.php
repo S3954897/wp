@@ -18,7 +18,7 @@
     </header>
 
     <nav>
-      <div>Put website navigation links here</div>
+      <div>Put website navigation links here!</div>
     </nav>
 
     <main>
