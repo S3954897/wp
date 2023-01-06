@@ -14,11 +14,16 @@
   <body>
 
     <header>
-      <div>Put company logo and name here</div>
+      <div>Lunardo</div>
     </header>
 
-    <nav>
-      <div>Put website navigation links here</div>
+    <nav class = "navArea" >
+        <ul class = "navGrid">
+            <li><a href='index.html'>Home</a></li>
+            <li><a href='index.html'>What's new</a></li>
+            <li><a href='index.html'>No Showing</a></li>
+            <li><a href='index.html'>Booking</a></li>
+        </ul>
     </nav>
 
     <main>

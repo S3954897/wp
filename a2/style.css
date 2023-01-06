@@ -1,2 +1,51 @@
 /* Insert your styles here */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+body {
+    background-color: #1C3F6E;
+    font-family: Orbitron;
+    color: #EFFC93;
+    margin: 0px;
+}
+
+.navGrid {
+    display: grid;
+    gap:20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.navArea {
+    box-sizing: border-box;
+    background-color: #80C271;
+    position: sticky;
+    top: 0px;
+}
+
+nav ul li {
+    display: inline-block;
+    text-align: center;
+}
+
+nav a{
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    width: 120px;
+}
+
+/*This is correct try not to use class selectors as it can often cause bloated code */
+nav a:link,
+nav a:visited {
+    color: #EFFC93;
+    background-color: #80C271;
+}
+nav a:hover,
+nav a:active,
+nav a:focus {
+    color: #80C271;
+    background-color: #EFFC93;
+
 
