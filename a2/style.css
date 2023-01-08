@@ -1,17 +1,50 @@
 /* Insert your styles here */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+@import url('//fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+@import url('//fonts.googleapis.com/css2?family=Limelight&family=Orbitron:wght@600&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
 
 body {
-    background-color: #1C3F6E;
-    font-family: Orbitron;
+    background: repeating-linear-gradient(90deg, #1C3F6E, #0c1b2f 5%, #1C3F6E 10%);
+    /*background-color: #0c1b2f;*/
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
     color: #EFFC93;
     margin: 0px;
 }
 
-.navGrid {
+h1, h2, h3 {
+    font-family: 'Limelight', cursive;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.headerArea{
     display: grid;
-    gap:20px;
-    grid-template-columns: repeat(4, 1fr);
+
+}
+header{
+    margin:auto;
+}
+
+.mainArea{
+    max-width: 910px;
+    margin: auto;
 }
 
 .navArea {
@@ -21,9 +54,19 @@ body {
     top: 0px;
 }
 
+.navGrid {
+    display: grid;
+    gap:5px;
+    max-width: 910px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto;
+    padding-inline-start: 0px;
+}
+
 nav ul li {
     display: inline-block;
-    text-align: center;
+    margin: auto;
 }
 
 nav a{
@@ -32,8 +75,10 @@ nav a{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    padding: 10px 30px;
-    width: 120px;
+    width:160px;
+    padding: 10px;
+    border-radius: 10px;
+
 }
 
 /*This is correct try not to use class selectors as it can often cause bloated code */

@@ -12,34 +12,77 @@
   </head>
 
   <body>
+    <div class = "headerArea">
+        <header>
+            <h1>Lunardo</h1>
+        </header>
+    </div>
 
-    <header>
-      <div>Lunardo</div>
-    </header>
+    <div class = "navArea">
+        <nav>
+            <ul class = "navGrid">
+                <li><a href='#aboutUs'>About us</a></li>
+                <li><a href='#seatsAndPricing'>Seats and Pricing</a></li>
+                <li><a href='#nowShowing'>Now Showing</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <nav class = "navArea" >
-        <ul class = "navGrid">
-            <li><a href='index.html'>Home</a></li>
-            <li><a href='index.html'>What's new</a></li>
-            <li><a href='index.html'>No Showing</a></li>
-            <li><a href='index.html'>Booking</a></li>
-        </ul>
-    </nav>
+    <div class="mainArea">
+        <main>
 
-    <main>
-      <article id='Website Under Construction'>
-    <!-- Creative Commons image sourced from https://pixabay.com/en/maintenance-under-construction-2422173/ and used for educational purposes only -->
-        <img src='../../media/website-under-construction.png' alt='Website Under Construction' />
-      </article>
-    </main>
+            <div class = "aboutUsArea">
+                <article id='aboutUs'>
+                    <h2>About us</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </article>
+            </div>
 
-    <footer>
-      <div>&copy;<script>
-        document.write(new Date().getFullYear());
-      </script> Grant Nicholas, S3954897. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
-      <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
-      <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
-    </footer>
+            <div class = "seatsAndPricesArea">
+                <article id='seatsAndPricing'>
+                    <h2>Seats and Pricing</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </article>
+            </div>
+
+            <div class = "nowShowingArea">
+                <article id='nowShowing'>
+                    <h2>Now Showing</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </article>
+            </div>
+
+        </main>
+    </div>
+
+    <div class = footerArea>
+        <footer>
+            <div>&copy;<script>
+                    document.write(new Date().getFullYear());
+                </script> Grant Nicholas, S3954897. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
+            <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
+            <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
+        </footer>
+    </div>
+
 
   </body>
 </html>
