@@ -4,6 +4,7 @@
 
 html{
     scroll-behavior: smooth;
+
 }
 
 body {
@@ -17,11 +18,14 @@ body {
 
 h1, h2, h3 {
     font-family: 'Limelight', cursive;
+    color: #FFFF99;
+    padding: 5px;
 }
 
 h1 {
     font-size: 3rem;
-    margin-bottom: 10px;
+    color: #FFFF99;
+
 }
 
 h2 {
@@ -30,8 +34,13 @@ h2 {
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    color: #80C271;
     margin-bottom: 10px;
+}
+
+p {
+    color: #5AACCF;
 }
 
 .headerArea{
@@ -42,16 +51,14 @@ header{
     margin:auto;
 }
 
-.mainArea{
-    max-width: 910px;
-    margin: auto;
-}
+
 
 .navArea {
     box-sizing: border-box;
     background-color: #80C271;
     position: sticky;
     top: 0px;
+    z-index:10;
 }
 
 .navGrid {
@@ -78,6 +85,8 @@ nav a{
     width:160px;
     padding: 10px;
     border-radius: 10px;
+    justify-content: center;
+
 
 }
 
@@ -93,4 +102,57 @@ nav a:focus {
     color: #80C271;
     background-color: #EFFC93;
 
+}
 
+.mainArea{
+    max-width: 910px;
+    margin: auto;
+    padding: 50px   ;
+}
+
+
+
+.seatsAndPricesArea {
+
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 910px;
+    margin: auto;
+}
+
+.seatsAndPricesGrid {
+    display: grid;
+    grid-template-columns: fit-content(100%),1fr;
+    grid-template-rows: repeat(auto-fit, 1fr);
+}
+
+.seatsAndPricesArea h3{
+    margin: auto;
+    /*padding: 10px;*/
+    padding-top: 50px;
+}
+
+.seatsAndPricesArea table {
+    text-align: center;
+    background-color: #1C3F6E;
+    border-radius: 10px;
+    opacity: 80%;
+
+}
+
+.seatsAndPricesArea table th {
+    color: #5AACCF;
+    padding: 10px;
+}
+
+.seatsAndPricesArea img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.footerArea {
+    position: relative;
+    align-self: end;
+}

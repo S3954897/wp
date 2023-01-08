@@ -31,34 +31,69 @@
     <div class="mainArea">
         <main>
 
-            <div class = "aboutUsArea">
+            <div class = 'aboutUsArea'>
                 <article id='aboutUs'>
                     <h2>About us</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </article>
+                        <h3>Reopening</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        <h3>All new seating</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        <h3>State of the art Projection and Sound</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                    </article>
             </div>
 
-            <div class = "seatsAndPricesArea">
-                <article id='seatsAndPricing'>
+            <div class = 'seatsAndPricesArea'>
+
+                <article class = "seatsAndPricesGrid" id= "seatsAndPricing">
                     <h2>Seats and Pricing</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        The Cinema offers discounted pricing weekday afternoons (12pm weekdays matinée sessions)
+                        and all day on Mondays.
                     </p>
+                    <h3>Standard seat pricing</h3>
+                    <img id= "standardSeatingImage"  src="/media/Profern-Standard-Twin.png">
+                    <table id = "standardSeatingTable">
+                        <tbody>
+                            <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
+                            <tr><td>Adult</td><td>$16.00</td><td>$21.50</td></tr>
+                            <tr><td>Concession</td><td>$14.50</td><td>$19.00</td></tr>
+                            <tr><td>Child</td><td>$13.00</td><td>$17.50</td></tr>
+                        </tbody>
+                    </table>
+                    <h3>First class seat pricing</h3>
+                    <img src="/media/Profern-Verona-Twin.png">
+                    <table id="firstClassSeating">
+                        <tbody>
+                            <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
+                            <tr><td>Adult</td><td>$16.00</td><td>$21.50</td></tr>
+                            <tr><td>Concession</td><td>$14.50</td><td>$19.00</td></tr>
+                            <tr><td>Child</td><td>$13.00</td><td>$17.50</td></tr>
+                        </tbody>
+                    </table>
                 </article>
             </div>
 
             <div class = "nowShowingArea">
-                <article id='nowShowing'>
+                <article id= "nowShowing">
                     <h2>Now Showing</h2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
