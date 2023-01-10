@@ -21,9 +21,9 @@
     <div class = "navArea">
         <nav>
             <ul class = "navGrid">
-                <li><a href='#aboutUs'>About us</a></li>
-                <li><a href='#seatsAndPricing'>Seats and Pricing</a></li>
-                <li><a href='#nowShowing'>Now Showing</a></li>
+                <li><a href="#aboutUs">About us</a></li>
+                <li><a href="#seatsAndPricing">Seats and Pricing</a></li>
+                <li><a href="#nowShowing">Now Showing</a></li>
             </ul>
         </nav>
     </div>
@@ -31,8 +31,8 @@
     <div class="mainArea">
         <main>
 
-            <div class = 'aboutUsArea'>
-                <article id='aboutUs'>
+            <div class = "aboutUsArea">
+                <article id= "aboutUs">
                     <h2>About us</h2>
                         <h3>Reopening</h3>
                             <p>
@@ -61,7 +61,7 @@
                     </article>
             </div>
 
-            <div class = 'seatsAndPricesArea'>
+            <div class = "seatsAndPricesArea">
 
                 <article class = "seatsAndPricesGrid" id= "seatsAndPricing">
                     <h2>Seats and Pricing</h2>
@@ -92,17 +92,24 @@
                 </article>
             </div>
 
-            <div class = "nowShowingArea">
-                <article id= "nowShowing">
+            <div class = "nowShowingArea" id = "css-mq">
+                <article class= "nowShowingGrid" id= "nowShowing">
                     <h2>Now Showing</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </article>
+                    <div class='card3D'>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY458_.jpg 319w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY687_.jpg 479w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY337_.jpg 235w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX900_.jpg 900w" width = "250">
+                        </div>
+                        <div>
+                            <article class = "plot" id = "plotAvatar">
+                                <span>Jake Sully lives with his newfound family formed on the
+                                    extrasolar moon Pandora. Once a familiar threat returns to finish what was
+                                    previously started, Jake must work with Neytiri and the army of the Na'vi race to
+                                    protect their home.
+                                </span>
+                            </article>
+                        </div>
+
+                    </div>
             </div>
 
         </main>

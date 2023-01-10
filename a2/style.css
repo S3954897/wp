@@ -4,12 +4,10 @@
 
 html{
     scroll-behavior: smooth;
-
 }
 
 body {
     background: repeating-linear-gradient(90deg, #1C3F6E, #0c1b2f 5%, #1C3F6E 10%);
-    /*background-color: #0c1b2f;*/
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
     color: #EFFC93;
@@ -51,8 +49,6 @@ header{
     margin:auto;
 }
 
-
-
 .navArea {
     box-sizing: border-box;
     background-color: #80C271;
@@ -86,8 +82,6 @@ nav a{
     padding: 10px;
     border-radius: 10px;
     justify-content: center;
-
-
 }
 
 /*This is correct try not to use class selectors as it can often cause bloated code */
@@ -105,19 +99,29 @@ nav a:focus {
 }
 
 .mainArea{
+    min-width: 336px;
     max-width: 910px;
+    padding: 20px;
     margin: auto;
-    padding: 50px   ;
+
+}
+
+.seatsAndPricesArea, .nowShowingArea, .aboutUsArea, plot{
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: fit-content;
+    min-width: 336px;
+    max-width: 910px;
+    background-color: #0c1b2f;
+    margin: 20px auto;
+    padding: 20px
+
 }
 
 
-
-.seatsAndPricesArea {
-
-    box-sizing: border-box;
-    width: fit-content;
-    max-width: 910px;
+.seatsAndPricesArea h3{
     margin: auto;
+    padding-top:20px;
 }
 
 .seatsAndPricesGrid {
@@ -126,18 +130,10 @@ nav a:focus {
     grid-template-rows: repeat(auto-fit, 1fr);
 }
 
-.seatsAndPricesArea h3{
-    margin: auto;
-    /*padding: 10px;*/
-    padding-top: 50px;
-}
-
 .seatsAndPricesArea table {
     text-align: center;
     background-color: #1C3F6E;
     border-radius: 10px;
-    opacity: 80%;
-
 }
 
 .seatsAndPricesArea table th {
@@ -146,13 +142,77 @@ nav a:focus {
 }
 
 .seatsAndPricesArea img {
-    width: 100%;
+    width: 50%;
     height: auto;
+    margin: auto;
 }
 
+.nowShowingArea {
 
+}
+
+.nowShowingGrid {
+    display: grid;
+    gap:5px;
+    max-width: 910px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    padding-inline-start: 0px;
+}
+
+.plot {
+    background-color: #5AACCF;
+    padding: 10px;
+    border-radius: 20px;
+    height: 1fr;
+    margin: auto;
+}
+
+#css-mq > div {
+    padding: 30px 0px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.card3D {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    width: 270px;
+    height: 490px;
+    overflow: auto;
+
+}
+
+.card3D > div:nth-child(1) {
+    transform: rotateY(0deg);
+}
+
+.card3D > div:nth-child(2) {
+    transform: rotateY(180deg);
+}
+
+.card3D:hover > div:nth-child(1) {
+    transform: rotateY(180deg);
+}
+
+.card3D:hover > div:nth-child(2) {
+    transform: rotateY(360deg);
+}
+
+.card3D > div {
+    height: calc(100%);
+    width: calc(100%);
+    position: absolute;
+    transition: 4s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    margin: auto;
+}
 
 .footerArea {
     position: relative;
     align-self: end;
 }
+
