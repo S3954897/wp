@@ -106,7 +106,7 @@ nav a:focus {
 
 }
 
-.seatsAndPricesArea, .nowShowingArea, .aboutUsArea, plot{
+.seatsAndPricesArea, .aboutUsArea {
     box-sizing: border-box;
     border-radius: 10px;
     width: fit-content;
@@ -117,7 +117,6 @@ nav a:focus {
     padding: 20px
 
 }
-
 
 .seatsAndPricesArea h3{
     margin: auto;
@@ -148,7 +147,19 @@ nav a:focus {
 }
 
 .nowShowingArea {
+    box-sizing: border-box;
+    border-radius: 10px;
+    /*width: fit-content;*/
+    min-width: 336px;
+    max-width: 910px;
+    background-color: #0c1b2f;
+    margin: 20px auto;
+    padding: 20px
+}
 
+.nowShowingArea h2 {
+    box-sizing: border-box;
+    display: flex;
 }
 
 .nowShowingGrid {
@@ -156,31 +167,60 @@ nav a:focus {
     gap:5px;
     max-width: 910px;
     margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+    grid-template-rows: auto;
+}
+
+.showTitleFlex {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.showInfoGrid {
+    display: grid;
+    gap:5px;
+    max-width: 410px;
+    margin: auto;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: auto;
-    padding-inline-start: 0px;
+}
+
+@media screen and (max-width: 480px ) {
+    .showInfoGrid {
+        grid-template-columns: 200px;
+    }
+    .nowShowingGrid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
 }
 
 .plot {
-    background-color: #5AACCF;
+    background-color: #1C3F6E;
+    box-sizing: border-box;
     padding: 10px;
     border-radius: 20px;
-    height: 1fr;
+    width: auto;
     margin: auto;
 }
+.plot p {
+    color: #FFFF99;
+}
 
+.plot img {
+    width: inherit;
+}
 #css-mq > div {
-    padding: 30px 0px;
-    display: inline-block;
-    box-sizing: border-box;
+
 }
 
 .card3D {
     box-sizing: border-box;
     display: inline-block;
     position: relative;
-    width: 270px;
-    height: 490px;
+    width: auto;
+    height:310px;
     overflow: auto;
 
 }

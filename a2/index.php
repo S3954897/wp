@@ -62,7 +62,6 @@
             </div>
 
             <div class = "seatsAndPricesArea">
-
                 <article class = "seatsAndPricesGrid" id= "seatsAndPricing">
                     <h2>Seats and Pricing</h2>
                     <p>
@@ -70,7 +69,7 @@
                         and all day on Mondays.
                     </p>
                     <h3>Standard seat pricing</h3>
-                    <img id= "standardSeatingImage"  src="./media/Profern-Standard-Twin.png">
+                    <img id= "standardSeatingImage"  src="/media/Profern-Standard-Twin.png">
                     <table id = "standardSeatingTable">
                         <tbody>
                             <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
@@ -80,7 +79,7 @@
                         </tbody>
                     </table>
                     <h3>First class seat pricing</h3>
-                    <img src="./media/Profern-Verona-Twin.png">
+                    <img src="/media/Profern-Verona-Twin.png">
                     <table id="firstClassSeating">
                         <tbody>
                             <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
@@ -92,24 +91,89 @@
                 </article>
             </div>
 
-            <div class = "nowShowingArea" id = "css-mq">
+            <div class = "nowShowingArea">
+                <h2>Now Showing</h2>
                 <article class= "nowShowingGrid" id= "nowShowing">
-                    <h2>Now Showing</h2>
-                    <div class='card3D'>
-                        <div>
-                            <img src="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY458_.jpg 319w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY687_.jpg 479w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY337_.jpg 235w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX900_.jpg 900w" width = "250">
+<!--                    <h3 class="showTitleFlex">Avatar: The Way of Water</h3>-->
+                    <div class="showInfoGrid">
+                        <div class='card3D'>
+                            <div class="plot">
+                                <img src="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY458_.jpg 319w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY687_.jpg 479w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY337_.jpg 235w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX900_.jpg 900w" width = "250">
+                            </div>
+                            <div>
+                                <article class = "plot" id = "plotAvatar">
+                                    <p>Jake Sully lives with his newfound family formed on the
+                                        extrasolar moon Pandora. Once a familiar threat returns to finish what was
+                                        previously started, Jake must work with Neytiri and the army of the Na'vi race to
+                                        protect their home.
+                                    </p>
+                                </article>
+                            </div>
                         </div>
                         <div>
-                            <article class = "plot" id = "plotAvatar">
-                                <span>Jake Sully lives with his newfound family formed on the
-                                    extrasolar moon Pandora. Once a familiar threat returns to finish what was
-                                    previously started, Jake must work with Neytiri and the army of the Na'vi race to
-                                    protect their home.
-                                </span>
-                            </article>
+                            <span>blah blah blah ake Sully lives with his newfound family formed on the
+                                        extrasolar moon Pandora. Once a familiar threat returns to finish what was
+                                        previously started, Jake must work with Neytiri and the army of the Na'vi race to
+                                        protect their home.</span>
                         </div>
-
                     </div>
+                    <div class="showInfoGrid">
+                        <div class='card3D'>
+                            <div>
+                                <img src="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY458_.jpg 319w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY687_.jpg 479w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY337_.jpg 235w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX900_.jpg 900w" width = "250">
+                            </div>
+                            <div>
+                                <article class = "plot" id = "plotAvatar">
+                                    <p>Jake Sully lives with his newfound family formed on the
+                                        extrasolar moon Pandora. Once a familiar threat returns to finish what was
+                                        previously started, Jake must work with Neytiri and the army of the Na'vi race to
+                                        protect their home.
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                        <div>
+                            <span>blah blah blah</span>
+                        </div>
+                    </div>
+
+<!--                    <h3 class="showTitleFlex">Weird: The Al Yankovic Story</h3>-->
+<!--                    <div class='showInfoGrid'>-->
+<!--                        <div>-->
+<!--                            <img src="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY458_.jpg 319w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY687_.jpg 479w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY337_.jpg 235w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX900_.jpg 900w" width = "250">-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            <article class = "plot" id = "plotAvatar">-->
+<!--                                <p>Jake Sully lives with his newfound family formed on the-->
+<!--                                    extrasolar moon Pandora. Once a familiar threat returns to finish what was-->
+<!--                                    previously started, Jake must work with Neytiri and the army of the Na'vi race to-->
+<!--                                    protect their home.-->
+<!--                                </p>-->
+<!--                            </article>-->
+<!--                        </div>-->
+<!---->
+<!--                    </div>-->
+
+
+
+
+
+
+<!--                    <div class='card3D'>-->
+<!--                        <div>-->
+<!--                            <img src="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY458_.jpg 319w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY687_.jpg 479w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY337_.jpg 235w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX900_.jpg 900w" width = "250">-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            <article class = "plot" id = "plotAvatar">-->
+<!--                                <p>Jake Sully lives with his newfound family formed on the-->
+<!--                                    extrasolar moon Pandora. Once a familiar threat returns to finish what was-->
+<!--                                    previously started, Jake must work with Neytiri and the army of the Na'vi race to-->
+<!--                                    protect their home.-->
+<!--                                </p>-->
+<!--                            </article>-->
+<!--                        </div>-->
+<!---->
+<!--                    </div>-->
             </div>
 
         </main>
