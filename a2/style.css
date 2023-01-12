@@ -111,7 +111,7 @@ nav a:focus {
     margin: auto;
 }
 
-.seatsAndPricesArea, .aboutUsArea {
+.seatsAndPricesArea, .aboutUsArea .bookingArea {
     box-sizing: border-box;
     border-radius: 10px;
     width: fit-content;
@@ -292,6 +292,23 @@ nav a:focus {
     margin: auto;
 }
 
+.trailer {
+    position: relative;
+    overflow: hidden;
+    max-width: 690px;
+    min-width: 200px;
+    padding-top: 52.25%;
+    margin: auto;
+}
+.trailer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+
+}
 .footerArea {
     box-sizing: border-box;
     background-color: #80C271;
