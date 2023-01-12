@@ -15,7 +15,7 @@ body {
     margin: 0px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4{
     font-family: 'Limelight', cursive;
     color: #FFFF99;
     padding: 5px;
@@ -36,6 +36,12 @@ h3 {
     font-size: 1.5rem;
     color: #80C271;
     margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 1.3rem;
+    color: #80C271;
+    margin: 0px;
 }
 
 p {
@@ -165,7 +171,7 @@ nav a:focus {
 
 .nowShowingGrid {
     display: grid;
-    gap:5px;
+    gap:20px;
     max-width: 910px;
     margin: auto;
     grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
@@ -197,24 +203,37 @@ nav a:focus {
 
 }
 
-.plot {
+.showPlot, .showImage {
     background-color: #1C3F6E;
     box-sizing: border-box;
+    height: 310px;
     padding: 10px;
     border-radius: 20px;
     width: auto;
     margin: auto;
 }
-.plot p {
+.showPlot p {
+    font-size: .9rem;
     color: #FFFF99;
 }
 
-.plot img {
+.showImage img {
     width: inherit;
-}
-#css-mq > div {
 
 }
+
+.showDetails {
+    font-size: .9rem;
+    margin: 0px;
+}
+
+.showDetails span {
+    font-size: .9rem;
+    margin-top: 0px;
+    color: #5AACCF;
+    padding-bottom: 20px;
+}
+
 
 .card3D {
     box-sizing: border-box;
@@ -253,6 +272,10 @@ nav a:focus {
 }
 
 .footerArea {
+    box-sizing: border-box;
+    background-color: #80C271;
+    padding: 20px;
+    font-size: 12px;
     position: relative;
     align-self: end;
 }

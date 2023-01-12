@@ -31,8 +31,8 @@
     <div class="mainArea">
         <main>
 
-            <div class = "aboutUsArea">
-                <article id= "aboutUs">
+            <div class = "aboutUsArea" id= "aboutUs">
+                <article>
                     <h2>About us</h2>
                         <h3>Reopening</h3>
                             <p>
@@ -61,15 +61,15 @@
                     </article>
             </div>
 
-            <div class = "seatsAndPricesArea">
-                <article class = "seatsAndPricesGrid" id= "seatsAndPricing">
-                    <h2>Seats and Pricing</h2>
+            <div class = "seatsAndPricesArea" id= "seatsAndPricing">
+                <h2>Seats and Pricing</h2>
+                <article class = "seatsAndPricesGrid">
                     <p>
                         The Cinema offers discounted pricing weekday afternoons (12pm weekdays matinée sessions)
                         and all day on Mondays.
                     </p>
                     <h3>Standard seat pricing</h3>
-                    <img id= "standardSeatingImage"  src="/media/Profern-Standard-Twin.png">
+                    <img id= "standardSeatingImage"  src="public_html/media/Profern-Standard-Twin.png">
                     <table id = "standardSeatingTable">
                         <tbody>
                             <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
@@ -79,7 +79,7 @@
                         </tbody>
                     </table>
                     <h3>First class seat pricing</h3>
-                    <img src="/media/Profern-Verona-Twin.png">
+                    <img src="public_html/media/Profern-Verona-Twin.png">
                     <table id="firstClassSeating">
                         <tbody>
                             <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
@@ -91,17 +91,17 @@
                 </article>
             </div>
 
-            <div class = "nowShowingArea">
+            <div class = "nowShowingArea" id= "nowShowing">
                 <h2>Now Showing</h2>
-                <article class= "nowShowingGrid" id= "nowShowing">
-<!--                    <h3 class="showTitleFlex">Avatar: The Way of Water</h3>-->
-                    <div class="showInfoGrid">
+                <article class= "nowShowingGrid">
+
+                    <div class="showInfoGrid" id = "Avatar: The Way of Water">
                         <div class='card3D'>
-                            <div class="plot">
+                            <div class="showImage">
                                 <img src="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY458_.jpg 319w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY687_.jpg 479w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY337_.jpg 235w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX900_.jpg 900w" width = "250">
                             </div>
                             <div>
-                                <article class = "plot" id = "plotAvatar">
+                                <article class = "showPlot">
                                     <p>Jake Sully lives with his newfound family formed on the
                                         extrasolar moon Pandora. Once a familiar threat returns to finish what was
                                         previously started, Jake must work with Neytiri and the army of the Na'vi race to
@@ -110,70 +110,134 @@
                                 </article>
                             </div>
                         </div>
-                        <div>
-                            <span>blah blah blah ake Sully lives with his newfound family formed on the
-                                        extrasolar moon Pandora. Once a familiar threat returns to finish what was
-                                        previously started, Jake must work with Neytiri and the army of the Na'vi race to
-                                        protect their home.</span>
+                        <div class="showDetails">
+                            <h4 class = "showTitle">Avatar: The Way of Water</h4>
+                            <span class = "showRating">Rating: M</span>
+                            <ul>
+                                <li class = "showDays1">Monday - Tuesday</li>
+                                <ul>
+                                    <li class = "showTimes1">9pm</li>
+                                </ul>
+
+                                <li class = "showDays2">Wednesday - Friday</li>
+                                <ul>
+                                    <li class = "showTimes2">9pm</li>
+                                </ul>
+                                <li class = "showDays3">Saturday - Sunday</li>
+                                <ul>
+                                    <li class = "showTimes3">6pm</li>
+                                </ul>
+                            </ul>
                         </div>
                     </div>
-                    <div class="showInfoGrid">
+
+                    <div class="showInfoGrid" id = "Weird: The Al Yankovic Story">
                         <div class='card3D'>
-                            <div>
-                                <img src="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY458_.jpg 319w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY687_.jpg 479w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY337_.jpg 235w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX900_.jpg 900w" width = "250">
+                            <div class="showImage">
+                                <img class="sc-7c0a9e7c-0 fEIEer peek" src="https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY438_.jpg 319w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY658_.jpg 479w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY337_.jpg 245w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY576_.jpg 420w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY720_.jpg 525w" data-image-id="rm3779790849-prev" alt="Daniel Radcliffe in Weird: The Al Yankovic Story (2022)">
                             </div>
                             <div>
-                                <article class = "plot" id = "plotAvatar">
-                                    <p>Jake Sully lives with his newfound family formed on the
-                                        extrasolar moon Pandora. Once a familiar threat returns to finish what was
-                                        previously started, Jake must work with Neytiri and the army of the Na'vi race to
-                                        protect their home.
+                                <article class = "showPlot">
+                                    <p>Explores every facet of Yankovic's life, from his meteoric rise to fame with
+                                        early hits like 'Eat It' and 'Like a Surgeon' to his torrid celebrity love
+                                        affairs and famously depraved lifestyle.
                                     </p>
                                 </article>
                             </div>
                         </div>
-                        <div>
-                            <span>blah blah blah</span>
+                        <div class="showDetails">
+                            <h4 class = "showTitle">Weird: The Al Yankovic Story</h4>
+                            <span class = "showRating">Rating: M</span>
+                            <ul>
+                                <li class = "showDays1">Monday - Tuesday</li>
+                                    <ul>
+                                        <li class = "showTimes1"> - </li>
+                                    </ul>
+
+                                <li class = "showDays2">Wednesday - Friday</li>
+                                    <ul>
+                                        <li class = "showTimes2">12pm</li>
+                                    </ul>
+                                <li class = "showDays3">Saturday - Sunday</li>
+                                    <ul>
+                                        <li class = "showTimes3">3pm</li>
+                                    </ul>
+                            </ul>
                         </div>
                     </div>
 
-<!--                    <h3 class="showTitleFlex">Weird: The Al Yankovic Story</h3>-->
-<!--                    <div class='showInfoGrid'>-->
-<!--                        <div>-->
-<!--                            <img src="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY458_.jpg 319w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY687_.jpg 479w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY337_.jpg 235w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX900_.jpg 900w" width = "250">-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <article class = "plot" id = "plotAvatar">-->
-<!--                                <p>Jake Sully lives with his newfound family formed on the-->
-<!--                                    extrasolar moon Pandora. Once a familiar threat returns to finish what was-->
-<!--                                    previously started, Jake must work with Neytiri and the army of the Na'vi race to-->
-<!--                                    protect their home.-->
-<!--                                </p>-->
-<!--                            </article>-->
-<!--                        </div>-->
-<!---->
-<!--                    </div>-->
+
+                    <div class="showInfoGrid" id = "Puss in Boots: The Last Wish">
+                        <div class='card3D'>
+                            <div class="showImage">
+                                <img src="https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_FMjpg_UY485_.jpg 319w, https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_FMjpg_UY728_.jpg 479w, https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_FMjpg_UY337_.jpg 221w, https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_FMjpg_UX760_.jpg 760w" data-image-id="rm342562561-curr" alt="Antonio Banderas, Salma Hayek, Wagner Moura, Ray Winstone, Olivia Colman, Harvey Guillén, Samson Kayo, and Florence Pugh in Puss in Boots: The Last Wish (2022)" class="sc-7c0a9e7c-0 fEIEer">
+                            </div>
+                            <div>
+                                <article class = "showPlot">
+                                    <p>Puss in Boots discovers that his passion for adventure has taken its toll: he
+                                        has burned through eight of his nine lives. Puss sets out on an epic journey
+                                        to find the mythical Last Wish and restore his nine lives.
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="showDetails">
+                            <h4 class = "showTitle">Puss in Boots: The Last Wish</h4>
+                            <span class = "showRating">Rating: PG</span>
+                            <ul>
+                                <li class = "showDays1">Monday - Tuesday</li>
+                                <ul>
+                                    <li class = "showTimes1">12pm</li>
+                                </ul>
+
+                                <li class = "showDays2">Wednesday - Friday</li>
+                                <ul>
+                                    <li class = "showTimes2">6pm</li>
+                                </ul>
+                                <li class = "showDays3">Saturday - Sunday</li>
+                                <ul>
+                                    <li class = "showTimes3">12pm</li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
 
 
+                    <div class="showInfoGrid" id = "Margrete: Queen of the North">
+                        <div class='card3D'>
+                            <div class="showImage">
+                                <img class="sc-7c0a9e7c-0 fEIEer peek" src="https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_FMjpg_UY474_.jpg 319w, https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_FMjpg_UY711_.jpg 479w, https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_FMjpg_UY337_.jpg 227w, https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_FMjpg_UY576_.jpg 388w, https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_FMjpg_UY720_.jpg 486w" data-image-id="rm2658194945-prev" alt="Trine Dyrholm in Margrete - Queen of the North (2021)">
+                            </div>
+                            <div>
+                                <article class = "showPlot">
+                                    <p>1402. Queen Margrete is ruling Sweden, Norway and Denmark through her adopted
+                                        son, Erik. But a conspiracy is in the making and Margrete finds herself in an
+                                        impossible dilemma that could shatter her life's work: the Kalmar Union.
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="showDetails">
+                            <h4 class = "showTitle">Margrete: Queen of the North</h4>
+                            <span class = "showRating">Rating: MA 15+</span>
+                            <ul>
+                                <li class = "showDays1">Monday - Tuesday</li>
+                                <ul>
+                                    <li class = "showTimes1">6pm</li>
+                                </ul>
 
-
-
-
-<!--                    <div class='card3D'>-->
-<!--                        <div>-->
-<!--                            <img src="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY458_.jpg 319w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY687_.jpg 479w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UY337_.jpg 235w, https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX900_.jpg 900w" width = "250">-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <article class = "plot" id = "plotAvatar">-->
-<!--                                <p>Jake Sully lives with his newfound family formed on the-->
-<!--                                    extrasolar moon Pandora. Once a familiar threat returns to finish what was-->
-<!--                                    previously started, Jake must work with Neytiri and the army of the Na'vi race to-->
-<!--                                    protect their home.-->
-<!--                                </p>-->
-<!--                            </article>-->
-<!--                        </div>-->
-<!---->
-<!--                    </div>-->
+                                <li class = "showDays2">Wednesday - Friday</li>
+                                <ul>
+                                    <li class = "showTimes2"> - </li>
+                                </ul>
+                                <li class = "showDays3">Saturday - Sunday</li>
+                                <ul>
+                                    <li class = "showTimes3">10pm</li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
             </div>
 
         </main>
