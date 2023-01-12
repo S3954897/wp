@@ -7,7 +7,6 @@ html{
 }
 
 body {
-    /*background: repeating-linear-gradient(90deg, #1C3F6E, #0c1b2f 5%, #1C3F6E 10%);*/
     background: repeating-linear-gradient(90deg, #8c0202, #380000 5%, #8c0202 10%);
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
@@ -111,7 +110,7 @@ nav a:focus {
     margin: auto;
 }
 
-.seatsAndPricesArea, .aboutUsArea .bookingArea {
+.seatsAndPricesArea, .aboutUsArea, .bookingArea {
     box-sizing: border-box;
     border-radius: 10px;
     width: fit-content;

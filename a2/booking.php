@@ -33,13 +33,43 @@
         <div class="selectedMovie">
             <pre>
                 <div id="div1" <?php if (isset($_GET['Avatar:_The_Way_of_Water']) == 'ACT') {
-                    echo 'style="display:block;"'; }
-                else {
-                    echo 'style="display:none;"';
-                } ?>>
+                                    echo 'style="display:block;"'; }
+                                else {
+                                    echo 'style="display:none;"';
+                                } ?>>
                     <p>This is div 1</p>
                     <div class="trailer">
                         <iframe src="https://www.youtube.com/embed/d9MyW72ELq0" title="Avatar: The Way of Water | Official Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div id="div2" <?php if (isset($_GET['Weird:_The_Al_Yankovic_Story']) == 'RMC') {
+                                    echo 'style="display:block;"'; }
+                                else {
+                                    echo 'style="display:none;"';
+                                } ?>>
+                    <p>This is div 2</p>
+                    <div class="trailer">
+                        <iframe src="https://www.youtube.com/embed/cCNKdJ2CIJk" title="WEIRD: The Al Yankovic Story - official trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div id="div3" <?php if (isset($_GET['Puss_in_Boots:_The_Last_Wish']) == 'FAM') {
+                                    echo 'style="display:block;"'; }
+                                else {
+                                    echo 'style="display:none;"';
+                                } ?>>
+                    <p>This is div 3</p>
+                    <div class="trailer">
+                        <iframe src="https://www.youtube.com/embed/fOngjQYypZU" title="Puss in Boots: The Last Wish | Official Trailer 3 (Universal Pictures) HD" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div id="div2" <?php if (isset($_GET['Margrete:_Queen_of_the_North']) == 'AHF') {
+                                    echo 'style="display:block;"'; }
+                                else {
+                                    echo 'style="display:none;"';
+                                } ?>>
+                    <p>This is div 4</p>
+                    <div class="trailer">
+                        <iframe src="https://www.youtube.com/embed/3A9u7FoljHM" title="MARGRETE: QUEEN OF THE NORTH - Official HD Trailer - Only in Cinemas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
             </pre>
