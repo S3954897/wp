@@ -69,7 +69,7 @@
                         and all day on Mondays.
                     </p>
                     <h3>Standard seat pricing</h3>
-                    <img id= "standardSeatingImage"  src="/~s3954897/public_html/media/Profern-Standard-Twin.png">
+                    <img id= "standardSeatingImage"  src="https://titan.csit.rmit.edu.au/~s3954897/media/Profern-Standard-Twin.png">
                     <table id = "standardSeatingTable">
                         <tbody>
                             <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
@@ -79,7 +79,7 @@
                         </tbody>
                     </table>
                     <h3>First class seat pricing</h3>
-                    <img src="/home/sh7/S3954897/public_html/media/Profern-Verona-Twin.png">
+                    <img src="https://titan.csit.rmit.edu.au/~s3954897/media/Profern-Verona-Twin.png">
                     <table id="firstClassSeating">
                         <tbody>
                             <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
