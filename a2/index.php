@@ -87,8 +87,8 @@
             </div>
 
             <div class = "nowShowingArea" id= "nowShowing">
+                <h2>Now Showing</h2>
                 <article class= "nowShowingGrid">
-                    <h2>Now Showing</h2>
                     <div class="showInfoGrid" id = "Avatar: The Way of Water">
                         <div class='card3D'>
                             <div class="showImage">
