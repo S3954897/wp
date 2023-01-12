@@ -79,30 +79,29 @@ nav ul li {
     margin: auto;
 }
 
-nav a{
+nav a {
     font-family: 'Orbitron', sans-serif;
     font-weight: bold;
     text-align: center;
+    width:160px;
     text-decoration: none;
     display: inline-block;
-    width:160px;
     padding: 10px;
     border-radius: 10px;
     justify-content: center;
 }
 
-/*This is correct try not to use class selectors as it can often cause bloated code */
 nav a:link,
 nav a:visited {
     color: #EFFC93;
     background-color: #80C271;
 }
+
 nav a:hover,
 nav a:active,
 nav a:focus {
     color: #80C271;
     background-color: #EFFC93;
-
 }
 
 .mainArea{
@@ -110,7 +109,6 @@ nav a:focus {
     max-width: 910px;
     padding: 20px;
     margin: auto;
-
 }
 
 .seatsAndPricesArea, .aboutUsArea {
@@ -156,7 +154,6 @@ nav a:focus {
 .nowShowingArea {
     box-sizing: border-box;
     border-radius: 10px;
-    /*width: fit-content;*/
     min-width: 336px;
     max-width: 910px;
     background-color: #0c1b2f;
@@ -195,7 +192,7 @@ nav a:focus {
 
 @media screen and (max-width: 480px ) {
     .showInfoGrid {
-        grid-template-columns: 200px;
+        grid-template-columns: 210px;
     }
     .nowShowingGrid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -214,7 +211,7 @@ nav a:focus {
 }
 .showPlot p {
     font-size: .9rem;
-    color: #FFFF99;
+    color: ghostwhite;
 }
 
 .showImage img {
@@ -234,6 +231,31 @@ nav a:focus {
     padding-bottom: 20px;
 }
 
+#bookNowButton {
+    font-family: 'Orbitron', sans-serif;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: auto;
+    color: #EFFC93;
+    background-color: #80C271;
+}
+
+#bookNowButton:link,
+#bookNowButton:visited {
+    color: #EFFC93;
+    background-color: #80C271;
+}
+
+#bookNowButton:hover,
+#bookNowButton:active,
+#bookNowButton:focus {
+    color: #80C271;
+    background-color: #EFFC93;
+}
 
 .card3D {
     box-sizing: border-box;
@@ -242,7 +264,6 @@ nav a:focus {
     width: auto;
     height:310px;
     overflow: auto;
-
 }
 
 .card3D > div:nth-child(1) {

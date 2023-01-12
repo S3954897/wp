@@ -34,42 +34,37 @@
             <div class = "aboutUsArea" id= "aboutUs">
                 <article>
                     <h2>About us</h2>
-                        <h3>Reopening</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        <h3>All new seating</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        <h3>State of the art Projection and Sound</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                    </article>
+                    <h3>Reopening Soon</h3>
+                    <p>
+                        The Lunardo team are excited to announce that our cinema has undergone extensive
+                        renovations and improvements. Our goal was to create a more comfortable and enjoyable
+                        movie-going experience for our valued customers, and we believe we have succeeded in
+                        doing just that.
+                    </p>
+                    <p>
+                        We have added new seats for your comfort, including new ultra comfortable standard
+                        seats and floating on a cloud reclinable first-class seats. The first-class seats offer
+                        a luxurious and comfortable experience, with added legroom and the ability to recline.
+                        Additionally, our projection and sound systems have been upgraded to include 3D Dolby
+                        Vision projection and Dolby Atmos sound. These new technologies will enhance the visual
+                        and auditory experience of our movies, immersing you in the film like never before.
+                    </p>
+                    <p>
+                        We're excited to announce that our cinema will be opening soon, stay tuned for the
+                        official opening date! We look forward to welcoming you to our new and improved cinema.
+                    </p>
+                </article>
             </div>
 
             <div class = "seatsAndPricesArea" id= "seatsAndPricing">
-                <h2>Seats and Pricing</h2>
                 <article class = "seatsAndPricesGrid">
+                    <h2>Seats and Pricing</h2>
                     <p>
                         The Cinema offers discounted pricing weekday afternoons (12pm weekdays matinée sessions)
                         and all day on Mondays.
                     </p>
                     <h3>Standard seat pricing</h3>
-                    <img id= "standardSeatingImage"  src="https://titan.csit.rmit.edu.au/~s3954897/media/Profern-Standard-Twin.png">
+                    <img id= "standardSeatingImage"  src="https://titan.csit.rmit.edu.au/~s3954897/media/Profern-Standard-Twin.png" alt = "Standard Seating">
                     <table id = "standardSeatingTable">
                         <tbody>
                             <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
@@ -79,7 +74,7 @@
                         </tbody>
                     </table>
                     <h3>First class seat pricing</h3>
-                    <img src="https://titan.csit.rmit.edu.au/~s3954897/media/Profern-Verona-Twin.png">
+                    <img src="https://titan.csit.rmit.edu.au/~s3954897/media/Profern-Verona-Twin.png" alt = "First Class Seating">
                     <table id="firstClassSeating">
                         <tbody>
                             <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
@@ -92,9 +87,8 @@
             </div>
 
             <div class = "nowShowingArea" id= "nowShowing">
-                <h2>Now Showing</h2>
                 <article class= "nowShowingGrid">
-
+                    <h2>Now Showing</h2>
                     <div class="showInfoGrid" id = "Avatar: The Way of Water">
                         <div class='card3D'>
                             <div class="showImage">
@@ -102,10 +96,9 @@
                             </div>
                             <div>
                                 <article class = "showPlot">
-                                    <p>Jake Sully lives with his newfound family formed on the
-                                        extrasolar moon Pandora. Once a familiar threat returns to finish what was
-                                        previously started, Jake must work with Neytiri and the army of the Na'vi race to
-                                        protect their home.
+                                    <p>Jake Sully lives with his newfound family formed on the extrasolar moon Pandora.
+                                        Once a familiar threat returns to finish what was previously started, Jake must
+                                        work with Neytiri and the army of the Na'vi race to protect their home.
                                     </p>
                                 </article>
                             </div>
@@ -128,6 +121,10 @@
                                     <li class = "showTimes3">6pm</li>
                                 </ul>
                             </ul>
+                            <form action="booking.php" method="GET" id="bookNowForm">
+                                <input type="hidden" name="Avatar: The Way of Water" value="ACT">
+                                <input type="submit" value="Book Now" id="bookNowButton">
+                            </form>
                         </div>
                     </div>
 
@@ -163,6 +160,10 @@
                                         <li class = "showTimes3">3pm</li>
                                     </ul>
                             </ul>
+                            <form action="booking.php" method="GET" id="bookNowForm">
+                                <input type="hidden" name="Weird: The Al Yankovic Story" value="RMC">
+                                <input type="submit" value="Book Now" id="bookNowButton">
+                            </form>
                         </div>
                     </div>
 
@@ -199,6 +200,10 @@
                                     <li class = "showTimes3">12pm</li>
                                 </ul>
                             </ul>
+                            <form action="booking.php" method="GET" id="bookNowForm">
+                                <input type="hidden" name="Puss in Boots: The Last Wish" value="FAM">
+                                <input type="submit" value="Book Now" id="bookNowButton">
+                            </form>
                         </div>
                     </div>
 
@@ -235,6 +240,10 @@
                                     <li class = "showTimes3">10pm</li>
                                 </ul>
                             </ul>
+                            <form action="booking.php" method="GET" id="bookNowForm">
+                                <input type="hidden" name="Margrete: Queen of the North" value="AHF">
+                                <input type="submit" value="Book Now" id="bookNowButton">
+                            </form>
                         </div>
                     </div>
                 </article>
