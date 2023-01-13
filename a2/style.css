@@ -304,6 +304,7 @@ nav a:focus {
     top: 0;
     left: 0;
     width: 100%;
+    border: none;
     height: auto;
     aspect-ratio: 16/9;
 
