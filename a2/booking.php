@@ -154,11 +154,11 @@
                                     <br>
                                     <input type="text" id="user[name]" name="user[name]" placeholder="Enter your full name">
                                     <br>
-                                    <label for="user[email]">Last Name</label>
+                                    <label for="user[email]">Email</label>
                                     <br>
                                     <input type="text" id="user[email]" name="user[email]" placeholder="Enter your email">
                                     <br>
-                                    <label for="user[mobile]">Password</label>
+                                    <label for="user[mobile]">Mobile</label>
                                     <br>
                                     <input type="text" id="user[mobile]" name="user[mobile]" placeholder="Enter your mobile">
                                 </div>
