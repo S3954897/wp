@@ -78,9 +78,9 @@
                     <table id="firstClassSeating">
                         <tbody>
                             <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
-                            <tr><td>Adult</td><td>$16.00</td><td>$21.50</td></tr>
-                            <tr><td>Concession</td><td>$14.50</td><td>$19.00</td></tr>
-                            <tr><td>Child</td><td>$13.00</td><td>$17.50</td></tr>
+                            <tr><td>Adult</td><td>$25.00</td><td>$31.00</td></tr>
+                            <tr><td>Concession</td><td>$23.50</td><td>$28.00</td></tr>
+                            <tr><td>Child</td><td>$22.00</td><td>$25.00</td></tr>
                         </tbody>
                     </table>
                 </article>

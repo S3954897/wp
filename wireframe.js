@@ -18,3 +18,13 @@ button.addEventListener("click", function(event){
   event.preventDefault();
   document.getElementById("bookNowForm").submit();
 })
+
+function validateForm() {
+  var name = document.getElementById("user[name]").value;
+  var email = document.getElementById("user[email]").value;
+  var mobile = document.getElementById("user[mobile]").value;
+  if (name == "" || email == "" || mobile == "") {
+    alert("Name and Email must be filled out");
+    return false;
+  }
+}

@@ -57,6 +57,7 @@ header{
 
 .navArea {
     box-sizing: border-box;
+    box-sizing: ;
     background-color: #80C271;
     position: sticky;
     top: 0px;
@@ -110,7 +111,11 @@ nav a:focus {
     margin: auto;
 }
 
-.seatsAndPricesArea, .aboutUsArea, .bookingArea {
+.seatsAndPricesArea,
+.aboutUsArea,
+.bookingArea,
+.showInfoFull,
+.bookingFormArea {
     box-sizing: border-box;
     border-radius: 10px;
     width: fit-content;
@@ -121,7 +126,7 @@ nav a:focus {
     padding: 20px
 
 }
-
+.showInfoFull,
 .seatsAndPricesArea h3{
     margin: auto;
     padding-top:20px;
@@ -148,6 +153,13 @@ nav a:focus {
     width: 50%;
     height: auto;
     margin: auto;
+}
+
+.showInfoFull {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
 }
 
 .nowShowingArea {
@@ -291,6 +303,7 @@ nav a:focus {
     margin: auto;
 }
 
+
 .trailer {
     position: relative;
     overflow: hidden;
@@ -309,6 +322,74 @@ nav a:focus {
     aspect-ratio: 16/9;
 
 }
+
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+}
+
+fieldset {
+    display:grid;
+    width: fit-content;
+    margin: 10px auto;
+    border-width: 0;
+}
+
+fieldset legend {
+    font-family: Limelight;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #EFFC93;
+
+}
+
+/*fieldset legend::before,*/
+/*fieldset legend::after{*/
+/*    content: "\2725";*/
+/*    padding: 20px;*/
+/*}*/
+
+fieldset input[type="radio"] + label {
+    color: #EFFC93;
+    background-color: #80C271;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.5s;
+    text-align: center;
+
+}
+
+fieldset input[type="radio"]:first-of-type + label {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+fieldset input[type="radio"]:last-of-type + label {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+fieldset input[type="radio"]:checked + label {
+    color: #80C271;
+    background-color: #EFFC93;
+
+    border-bottom: solid;
+    border-right: solid;
+    border-bottom-color: lightslategrey;
+    border-right-color: lightslategrey;
+    border-top: solid;
+    border-left: solid;
+    border-top-color: black;
+    border-left-color: black;
+
+}
+
+fieldset input[type="radio"]{
+    display: none;
+}
+
 .footerArea {
     box-sizing: border-box;
     background-color: #80C271;
