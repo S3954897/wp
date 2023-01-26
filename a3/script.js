@@ -59,12 +59,12 @@ function validateForm() {
 }
 
 function validateName(name) {
-    let nameRegex = /^[A-Za-z][A-Za-z\'\-][^0-9]+([\ A-Za-z][A-Za-z\'\-][^0-9]+)*/
+    let nameRegex = /^[a-z\D]+[a-z\D]*$/i
     return nameRegex.test(String(name));
 }
 
 function validateEmail(email) {
-    let emailRegex = /^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,3})+$/gi;
+    let emailRegex = /^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,3})+$/i;
     return emailRegex.test(String(email));
 }
 
