@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lunardo Home Page</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Lunardo Home Page</title>
 
-    <!-- Keep wireframe.css for debugging, add your css to style.css -->
-    <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
-    <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
-    <script src='../wireframe.js'></script>
+      <!-- Keep wireframe.css for debugging, add your css to style.css -->
+<!--      <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>-->
+      <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
+      <script src='script.js'></script>
   </head>
 
   <body>
@@ -31,7 +31,7 @@
     <div class="mainArea">
         <main>
 
-            <div class = "aboutUsArea" id= "aboutUs">
+            <div class = "area aboutUsArea" id= "aboutUs">
                 <article>
                     <h2>About us</h2>
                     <h3>Reopening Soon</h3>
@@ -56,7 +56,7 @@
                 </article>
             </div>
 
-            <div class = "seatsAndPricesArea" id= "seatsAndPricing">
+            <div class = "area seatsAndPricesArea" id= "seatsAndPricing">
                 <article class = "seatsAndPricesGrid">
                     <h2>Seats and Pricing</h2>
                     <p>
@@ -86,7 +86,7 @@
                 </article>
             </div>
 
-            <div class = "nowShowingArea" id= "nowShowing">
+            <div class = "area nowShowingArea" id= "nowShowing">
                 <h2>Now Showing</h2>
                 <article class= "nowShowingGrid">
                     <div class="showInfoGrid" id = "Avatar: The Way of Water">

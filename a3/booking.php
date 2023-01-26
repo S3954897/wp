@@ -6,9 +6,9 @@
     <title>Lunardo Booking Page</title>
     
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
-    <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
+<!--    <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>-->
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
-    <script src='../wireframe.js'></script>
+    <script src='script.js'></script>
   </head>
 
   <body>
@@ -222,18 +222,7 @@
       <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
     </footer>
 
-      <aside id="debug">
-      <hr>
-      <h3>Debug Area</h3>
-      <pre>
-GET Contains:
-<?php print_r($_GET) ?>
-POST Contains:
-<?php print_r($_POST) ?>
-SESSION Contains:
-<?php print_r($_SESSION) ?>
-      </pre>
-    </aside>
+
 
   </body>
 </html>

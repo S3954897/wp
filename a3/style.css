@@ -94,13 +94,16 @@ nav a:link,
 nav a:visited {
     color: #EFFC93;
     background-color: #80C271;
+    transition: 0.3s;
 }
 
 nav a:hover,
 nav a:active,
-nav a:focus {
+nav a:focus,
+nav a.current{
     color: #80C271;
     background-color: #EFFC93;
+    transition: 0.3s;
 }
 
 .mainArea{

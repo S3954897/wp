@@ -13,11 +13,11 @@ function toggleWireframe() {
   // repeat above code for other stylesheets you want to toggle
 }
 
-let button = document.getElementById("bookNowButton")
-button.addEventListener("click", function(event){
-  event.preventDefault();
-  document.getElementById("bookNowForm").submit();
-})
+// let button = document.getElementById("bookNowButton")
+// button.addEventListener("click", function(event){
+//   event.preventDefault();
+//   document.getElementById("bookNowForm").submit();
+// })
 
 function validateForm() {
   var name = document.getElementById("user[name]").value;
