@@ -41,9 +41,9 @@
                             <h3>Booking</h3>
                             <form id="movieBooking" onsubmit="return validateForm()" action="booking.php" method="post">
                                 <input type="hidden" name="Avatar: The Way of Water" value="ACT">
-                                <label for="seats[STA]">Standard Adult Seat/s</label>
-                                <select id="seats[STA]" name="seats[STA]">
-                                    <option value="" disabled selected>Select an option</option>
+                                <label for="seatsSTA">Standard Adult Seat/s</label>
+                                <select onchange="calcPrice()" id="seatsSTA" name="seatsSTA">
+                                    <option value="">Select an option</option>
                                     <option value="1" data-fullprice="21.5" data-discprice="16">1</option>
                                     <option value="2" data-fullprice="21.5" data-discprice="16">2</option>
                                     <option value="3" data-fullprice="21.5" data-discprice="16">3</option>
@@ -56,9 +56,9 @@
                                     <option value="10" data-fullprice="21.5" data-discprice="16">10</option>
                                 </select>
                                 <br>
-                                <label for="seats[STP]">Standard Concession Seat/s</label>
-                                <select id="seats[STP]" name="seats[STP]">
-                                    <option value="" disabled selected>Select an option</option>
+                                <label for="seatsSTP">Standard Concession Seat/s</label>
+                                <select onchange="calcPrice()" id="seatsSTP" name="seatsSTP">
+                                    <option value="">Select an option</option>
                                     <option value="1" data-fullprice="19" data-discprice="14.5">1</option>
                                     <option value="2" data-fullprice="19" data-discprice="14.5">2</option>
                                     <option value="3" data-fullprice="19" data-discprice="14.5">3</option>
@@ -71,9 +71,9 @@
                                     <option value="10" data-fullprice="19" data-discprice="14.5">10</option>
                                 </select>
                                 <br>
-                                <label for="seats[STC]">Standard Child Seat/s</label>
-                                <select id="seats[STC]" name="seats[STC]">
-                                    <option value="" disabled selected>Select an option</option>
+                                <label for="seatsSTC">Standard Child Seat/s</label>
+                                <select  onchange="calcPrice()" id="seatsSTC" name="seatsSTC">
+                                    <option value="">Select an option</option>
                                     <option value="1" data-fullprice="17.5" data-discprice="13">1</option>
                                     <option value="2" data-fullprice="17.5" data-discprice="13">2</option>
                                     <option value="3" data-fullprice="17.5" data-discprice="13">3</option>
@@ -86,9 +86,9 @@
                                     <option value="10" data-fullprice="17.5" data-discprice="13">10</option>
                                 </select>
                                 <br>
-                                <label for="seats[FCA]">First Class Adult Seat/s</label>
-                                <select id="seats[FCA]" name="seats[FCA]">
-                                    <option value="" disabled selected>Select an option</option>
+                                <label for="seatsFCA">First Class Adult Seat/s</label>
+                                <select  onchange="calcPrice()" id="seatsFCA" name="seatsFCA">
+                                    <option value="">Select an option</option>
                                     <option value="1" data-fullprice="31" data-discprice="25">1</option>
                                     <option value="2" data-fullprice="31" data-discprice="25">2</option>
                                     <option value="3" data-fullprice="31" data-discprice="25">3</option>
@@ -102,8 +102,8 @@
                                 </select>
                                 <br>
                                 <label for="seats[FCP]">First Class Concession Seat/s</label>
-                                <select id="seats[FCP]" name="seats[FCP]">
-                                    <option value="" disabled selected>Select an option</option>
+                                <select  onchange="calcPrice()" id="seatsFCP" name="seatsFCP">
+                                    <option value="">Select an option</option>
                                     <option value="1" data-fullprice="28" data-discprice="23.5">1</option>
                                     <option value="2" data-fullprice="28" data-discprice="23.5">2</option>
                                     <option value="3" data-fullprice="28" data-discprice="23.5">3</option>
@@ -116,9 +116,9 @@
                                     <option value="10" data-fullprice="28" data-discprice="23.5">10</option>
                                 </select>
                                 <br>
-                                <label for="seats[FCC]">First Class Child Seat/s</label>
-                                <select id="seats[FCC]" name="seats[FCC]">
-                                    <option value="" disabled selected>Select an option</option>
+                                <label for="seatsFCC">First Class Child Seat/s</label>
+                                <select onchange="calcPrice()" id="seatsFCC" name="seatsFCC">
+                                    <option value="">Select an option</option>
                                     <option value="1" data-fullprice="25" data-discprice="22">1</option>
                                     <option value="2" data-fullprice="25" data-discprice="22">2</option>
                                     <option value="3" data-fullprice="25" data-discprice="22">3</option>

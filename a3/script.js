@@ -19,7 +19,7 @@ button.addEventListener("click", function(event){
     event.preventDefault();
     document.getElementById("bookNowForm").submit();
 
-})
+});
 
 //Navigation area dynamics
 window.onscroll = function() {
@@ -38,7 +38,82 @@ window.onscroll = function() {
     }
 }
 
-//Booking form validation
+
+
+//Seat and Day Pricing calculation
+function calcPrice() {
+    let seatSelectSTA = document.querySelector("#seatsSTA");
+    let selectedOptionSTA = seatSelectSTA.options[seatSelectSTA.selectedIndex];
+    let fullPriceSTA = selectedOptionSTA.getAttribute("data-fullprice");
+    let discPriceSTA = selectedOptionSTA.getAttribute("data-discprice");
+    let seatsValueSTA = selectedOptionSTA.value
+
+    let seatSelectSTP = document.querySelector("#seatsSTP");
+    let selectedOptionSTP = seatSelectSTP.options[seatSelectSTP.selectedIndex];
+    let fullPriceSTP = selectedOptionSTP.getAttribute("data-fullprice");
+    let discPriceSTP = selectedOptionSTP.getAttribute("data-discprice");
+    let seatsValueSTP = selectedOptionSTP.value
+
+    let seatSelectSTC = document.querySelector("#seatsSTC");
+    let selectedOptionSTC = seatSelectSTC.options[seatSelectSTC.selectedIndex];
+    let fullPriceSTC = selectedOptionSTC.getAttribute("data-fullprice");
+    let discPriceSTC = selectedOptionSTC.getAttribute("data-discprice");
+    let seatsValueSTC = selectedOptionSTC.value
+
+    let seatSelectFCA = document.querySelector("#seatsFCA");
+    let selectedOptionFCA = seatSelectFCA.options[seatSelectFCA.selectedIndex];
+    let fullPriceFCA = selectedOptionFCA.getAttribute("data-fullprice");
+    let discPriceFCA = selectedOptionFCA.getAttribute("data-discprice");
+    let seatsValueFCA = selectedOptionFCA.value
+
+    let seatSelectFCP = document.querySelector("#seatsFCP");
+    let selectedOptionFCP = seatSelectFCP.options[seatSelectFCP.selectedIndex];
+    let fullPriceFCP = selectedOptionFCP.getAttribute("data-fullprice");
+    let discPriceFCP = selectedOptionFCP.getAttribute("data-discprice");
+    let seatsValueFCP = selectedOptionFCP.value
+
+    let seatSelectFCC = document.querySelector("#seatsFCC");
+    let selectedOptionFCC = seatSelectFCC.options[seatSelectFCC.selectedIndex];
+    let fullPriceFCC = selectedOptionFCC.getAttribute("data-fullprice");
+    let discPriceFCC = selectedOptionFCC.getAttribute("data-discprice");
+    let seatsValueFCC = selectedOptionFCC.value
+
+
+    console.clear()
+    if(seatsValueSTA > 0) {
+        console.log("STA Full Price: $"+fullPriceSTA+" Seats:"+seatsValueSTA+" Total:$"+(fullPriceSTA*seatsValueSTA));
+        console.log("STA Discount Price: $"+discPriceSTA+" Seats:"+seatsValueSTA+" Total:$"+(discPriceSTA*seatsValueSTA));
+    }
+
+    if (seatsValueSTP > 0) {
+        console.log("STP Full Price: $"+fullPriceSTP+" Seats:"+seatsValueSTP+" Total:$"+(fullPriceSTP*seatsValueSTP));
+        console.log("STP Discount Price: $"+discPriceSTP+" Seats:"+seatsValueSTP+" Total:$"+(discPriceSTP*seatsValueSTP));
+    }
+
+    if (seatsValueSTC > 0) {
+        console.log("STC Full Price: $"+fullPriceSTC+" Seats:"+seatsValueSTC+" Total:$"+(fullPriceSTC*seatsValueSTC));
+        console.log("STC Discount Price: $"+discPriceSTC+" Seats:"+seatsValueSTC+" Total:$"+(discPriceSTC*seatsValueSTC));
+    }
+
+    if(seatsValueFCA > 0) {
+        console.log("FCA Full Price: $"+fullPriceFCA+" Seats:"+seatsValueFCA+" Total:$"+(fullPriceFCA*seatsValueFCA));
+        console.log("FCA Discount Price: $"+discPriceFCA+" Seats:"+seatsValueFCA+" Total:$"+(discPriceFCA*seatsValueFCA));
+    }
+
+    if (seatsValueFCP > 0) {
+        console.log("FCP Full Price: $"+fullPriceFCP+" Seats:"+seatsValueFCP+" Total:$"+(fullPriceFCP*seatsValueFCP));
+        console.log("FCP Discount Price: $"+discPriceFCP+" Seats:"+seatsValueFCP+" Total:$"+(discPriceFCP*seatsValueFCP));
+    }
+
+    if (seatsValueFCC > 0) {
+        console.log("FCC Full Price: $"+fullPriceFCC+" Seats:"+seatsValueFCC+" Total:$"+(fullPriceFCC*seatsValueFCC));
+        console.log("FCC Discount Price: $"+discPriceFCC+" Seats:"+seatsValueFCC+" Total:$"+(discPriceFCC*seatsValueFCC));
+    }
+
+}
+
+
+//Frontend form validation
 function validateForm() {
     let name = document.getElementById("user[name]").value;
     let email = document.getElementById("user[email]").value;
@@ -57,7 +132,6 @@ function validateForm() {
         return false;
     }
 }
-
 function validateName(name) {
     let nameRegex = /^[a-z\D]+[a-z\D]*$/i
     return nameRegex.test(String(name));
