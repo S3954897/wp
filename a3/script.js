@@ -38,8 +38,6 @@ window.onscroll = function() {
     }
 }
 
-
-
 //Seat and Day Pricing calculation
 function calcPrice() {
     let seatSelectSTA = document.querySelector("#seatsSTA");
@@ -129,7 +127,6 @@ function calcPrice() {
         }
     }
 }
-
 
 //Frontend form validation
 function validateForm() {
