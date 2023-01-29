@@ -132,9 +132,9 @@
                                 </select>
                                 <br>
                                 <div>
-                                    <fieldset>
+                                    <fieldset onchange="calcPrice()" id="daySelection">
                                         <legend target="_blank">Session times</legend>
-                                        <input type="radio" id="monday" name="day" value="MON" data-pricing="discprice" checked>
+                                        <input type="radio" id="monday" name="day" value="MON" data-pricing="discprice">
                                         <label for="monday">Monday 9pm</label>
                                         <input type="radio" id="tuesday" name="day" value="TUE" data-pricing="fullprice">
                                         <label for="tuesday">Tuesday 9pm</label>

@@ -78,38 +78,56 @@ function calcPrice() {
     let discPriceFCC = selectedOptionFCC.getAttribute("data-discprice");
     let seatsValueFCC = selectedOptionFCC.value
 
+    let daySelect = document.querySelector("#daySelection");
+    let dayTime = daySelect.getElementsByTagName("input");
+    let dayTimeDisc = "";
 
     console.clear()
-    if(seatsValueSTA > 0) {
-        console.log("STA Full Price: $"+fullPriceSTA+" Seats:"+seatsValueSTA+" Total:$"+(fullPriceSTA*seatsValueSTA));
-        console.log("STA Discount Price: $"+discPriceSTA+" Seats:"+seatsValueSTA+" Total:$"+(discPriceSTA*seatsValueSTA));
+    for (let i=0; i<dayTime.length;i++) {
+        if (dayTime[i].checked){
+            dayTimeDisc = dayTime[i].getAttribute("data-pricing");
+            console.log(dayTimeDisc);
+        }
     }
-
-    if (seatsValueSTP > 0) {
-        console.log("STP Full Price: $"+fullPriceSTP+" Seats:"+seatsValueSTP+" Total:$"+(fullPriceSTP*seatsValueSTP));
-        console.log("STP Discount Price: $"+discPriceSTP+" Seats:"+seatsValueSTP+" Total:$"+(discPriceSTP*seatsValueSTP));
+    if (dayTimeDisc === "fullprice") {
+        if(seatsValueSTA > 0) {
+            console.log("STA Full Price: $"+fullPriceSTA+" Seats:"+seatsValueSTA+" Total:$"+(fullPriceSTA*seatsValueSTA));
+        }
+        if (seatsValueSTP > 0) {
+            console.log("STP Full Price: $"+fullPriceSTP+" Seats:"+seatsValueSTP+" Total:$"+(fullPriceSTP*seatsValueSTP));
+        }
+        if (seatsValueSTC > 0) {
+            console.log("STC Full Price: $"+fullPriceSTC+" Seats:"+seatsValueSTC+" Total:$"+(fullPriceSTC*seatsValueSTC));
+        }
+        if(seatsValueFCA > 0) {
+            console.log("FCA Full Price: $"+fullPriceFCA+" Seats:"+seatsValueFCA+" Total:$"+(fullPriceFCA*seatsValueFCA));
+        }
+        if (seatsValueFCP > 0) {
+            console.log("FCP Full Price: $"+fullPriceFCP+" Seats:"+seatsValueFCP+" Total:$"+(fullPriceFCP*seatsValueFCP));
+        }
+        if (seatsValueFCC > 0) {
+            console.log("FCC Full Price: $"+fullPriceFCC+" Seats:"+seatsValueFCC+" Total:$"+(fullPriceFCC*seatsValueFCC));
+        }
+    } else if (dayTimeDisc == "discprice") {
+        if(seatsValueSTA > 0) {
+            console.log("STA Discount Price: $"+discPriceSTA+" Seats:"+seatsValueSTA+" Total:$"+(discPriceSTA*seatsValueSTA));
+        }
+        if (seatsValueSTP > 0) {
+            console.log("STP Discount Price: $"+discPriceSTP+" Seats:"+seatsValueSTP+" Total:$"+(discPriceSTP*seatsValueSTP));
+        }
+        if (seatsValueSTC > 0) {
+            console.log("STC Discount Price: $"+discPriceSTC+" Seats:"+seatsValueSTC+" Total:$"+(discPriceSTC*seatsValueSTC));
+        }
+        if(seatsValueFCA > 0) {
+            console.log("FCA Discount Price: $"+discPriceFCA+" Seats:"+seatsValueFCA+" Total:$"+(discPriceFCA*seatsValueFCA));
+        }
+        if (seatsValueFCP > 0) {
+            console.log("FCP Discount Price: $"+discPriceFCP+" Seats:"+seatsValueFCP+" Total:$"+(discPriceFCP*seatsValueFCP));
+        }
+        if (seatsValueFCC > 0) {
+            console.log("FCC Discount Price: $"+discPriceFCC+" Seats:"+seatsValueFCC+" Total:$"+(discPriceFCC*seatsValueFCC));
+        }
     }
-
-    if (seatsValueSTC > 0) {
-        console.log("STC Full Price: $"+fullPriceSTC+" Seats:"+seatsValueSTC+" Total:$"+(fullPriceSTC*seatsValueSTC));
-        console.log("STC Discount Price: $"+discPriceSTC+" Seats:"+seatsValueSTC+" Total:$"+(discPriceSTC*seatsValueSTC));
-    }
-
-    if(seatsValueFCA > 0) {
-        console.log("FCA Full Price: $"+fullPriceFCA+" Seats:"+seatsValueFCA+" Total:$"+(fullPriceFCA*seatsValueFCA));
-        console.log("FCA Discount Price: $"+discPriceFCA+" Seats:"+seatsValueFCA+" Total:$"+(discPriceFCA*seatsValueFCA));
-    }
-
-    if (seatsValueFCP > 0) {
-        console.log("FCP Full Price: $"+fullPriceFCP+" Seats:"+seatsValueFCP+" Total:$"+(fullPriceFCP*seatsValueFCP));
-        console.log("FCP Discount Price: $"+discPriceFCP+" Seats:"+seatsValueFCP+" Total:$"+(discPriceFCP*seatsValueFCP));
-    }
-
-    if (seatsValueFCC > 0) {
-        console.log("FCC Full Price: $"+fullPriceFCC+" Seats:"+seatsValueFCC+" Total:$"+(fullPriceFCC*seatsValueFCC));
-        console.log("FCC Discount Price: $"+discPriceFCC+" Seats:"+seatsValueFCC+" Total:$"+(discPriceFCC*seatsValueFCC));
-    }
-
 }
 
 
