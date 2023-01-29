@@ -81,6 +81,7 @@ function calcPrice() {
     let dayTimeDisc = "";
 
     console.clear()
+    //loop to read radio option for day/time selection
     for (let i=0; i<dayTime.length;i++) {
         if (dayTime[i].checked){
             dayTimeDisc = dayTime[i].getAttribute("data-pricing");
