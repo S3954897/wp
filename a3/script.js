@@ -83,11 +83,10 @@ function calcPrice() {
     let bookingTotalPrice = 0;
 
     console.clear()
-    //loop to read radio option for day/time selection
+    //loop to read radio option for day/time
     for (let i=0; i<dayTime.length;i++) {
         if (dayTime[i].checked){
             dayTimeDisc = dayTime[i].getAttribute("data-pricing");
-            console.log(dayTimeDisc);
         }
     }
     if (dayTimeDisc === "fullprice") {
