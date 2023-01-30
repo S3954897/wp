@@ -80,6 +80,8 @@ function calcPrice() {
     let dayTime = daySelect.getElementsByTagName("input");
     let dayTimeDisc = "";
 
+    let bookingTotalPrice = 0;
+
     console.clear()
     //loop to read radio option for day/time selection
     for (let i=0; i<dayTime.length;i++) {
@@ -90,43 +92,59 @@ function calcPrice() {
     }
     if (dayTimeDisc === "fullprice") {
         if(seatsValueSTA > 0) {
+            bookingTotalPrice += (fullPriceSTA*seatsValueSTA)
             console.log("STA Full Price: $"+fullPriceSTA+" Seats:"+seatsValueSTA+" Total:$"+(fullPriceSTA*seatsValueSTA));
         }
         if (seatsValueSTP > 0) {
+            bookingTotalPrice += (fullPriceSTP*seatsValueSTP)
             console.log("STP Full Price: $"+fullPriceSTP+" Seats:"+seatsValueSTP+" Total:$"+(fullPriceSTP*seatsValueSTP));
         }
         if (seatsValueSTC > 0) {
+            bookingTotalPrice += (fullPriceSTC*seatsValueSTC)
             console.log("STC Full Price: $"+fullPriceSTC+" Seats:"+seatsValueSTC+" Total:$"+(fullPriceSTC*seatsValueSTC));
         }
         if(seatsValueFCA > 0) {
+            bookingTotalPrice += (fullPriceFCA*seatsValueFCA)
             console.log("FCA Full Price: $"+fullPriceFCA+" Seats:"+seatsValueFCA+" Total:$"+(fullPriceFCA*seatsValueFCA));
         }
         if (seatsValueFCP > 0) {
+            bookingTotalPrice += (fullPriceFCP*seatsValueFCP)
             console.log("FCP Full Price: $"+fullPriceFCP+" Seats:"+seatsValueFCP+" Total:$"+(fullPriceFCP*seatsValueFCP));
         }
         if (seatsValueFCC > 0) {
+            bookingTotalPrice += (fullPriceFCC*seatsValueFCC)
             console.log("FCC Full Price: $"+fullPriceFCC+" Seats:"+seatsValueFCC+" Total:$"+(fullPriceFCC*seatsValueFCC));
         }
     } else if (dayTimeDisc == "discprice") {
         if(seatsValueSTA > 0) {
+            bookingTotalPrice += (discPriceSTA*seatsValueSTA)
             console.log("STA Discount Price: $"+discPriceSTA+" Seats:"+seatsValueSTA+" Total:$"+(discPriceSTA*seatsValueSTA));
         }
         if (seatsValueSTP > 0) {
+            bookingTotalPrice += (discPriceSTP*seatsValueSTP)
             console.log("STP Discount Price: $"+discPriceSTP+" Seats:"+seatsValueSTP+" Total:$"+(discPriceSTP*seatsValueSTP));
         }
         if (seatsValueSTC > 0) {
+            bookingTotalPrice += (discPriceSTC*seatsValueSTC)
             console.log("STC Discount Price: $"+discPriceSTC+" Seats:"+seatsValueSTC+" Total:$"+(discPriceSTC*seatsValueSTC));
         }
         if(seatsValueFCA > 0) {
+            bookingTotalPrice += (discPriceFCA*seatsValueFCA)
             console.log("FCA Discount Price: $"+discPriceFCA+" Seats:"+seatsValueFCA+" Total:$"+(discPriceFCA*seatsValueFCA));
         }
         if (seatsValueFCP > 0) {
+            bookingTotalPrice += (discPriceFCP*seatsValueFCP)
             console.log("FCP Discount Price: $"+discPriceFCP+" Seats:"+seatsValueFCP+" Total:$"+(discPriceFCP*seatsValueFCP));
         }
         if (seatsValueFCC > 0) {
+            bookingTotalPrice += (discPriceFCC*seatsValueFCC)
             console.log("FCC Discount Price: $"+discPriceFCC+" Seats:"+seatsValueFCC+" Total:$"+(discPriceFCC*seatsValueFCC));
         }
     }
+    if (bookingTotalPrice > 0){
+        console.log(bookingTotalPrice)
+    }
+
 }
 
 //Frontend form validation
