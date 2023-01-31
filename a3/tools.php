@@ -45,23 +45,23 @@
     );
 
     $movie3 = new Movie(
-        "Weird: The Al Yankovic Story",
-        "Explores every facet of Yankovic's life, from his meteoric rise to fame with early hits like 'Eat It' and 'Like a Surgeon' to his torrid celebrity love affairs and famously depraved lifestyle.",
-        "M",
-        '"https://www.youtube.com/embed/cCNKdJ2CIJk" title="WEIRD: The Al Yankovic Story - official trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen',
-        '"https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY438_.jpg 319w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY658_.jpg 479w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY337_.jpg 245w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY576_.jpg 420w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY720_.jpg 525w"',
-        "Daniel Radcliffe in Weird: The Al Yankovic Story (2022)",
-        ["-" , "-", 12, 12, 12, 15, 15]
+        "Puss in Boots: The Last Wish",
+        "Puss in Boots discovers that his passion for adventure has taken its toll: he has burned through eight of his nine lives. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives",
+        "PG",
+        '"https://www.youtube.com/embed/fOngjQYypZU" title="Puss in Boots: The Last Wish | Official Trailer 3 (Universal Pictures) HD" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen',
+        '"https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_FMjpg_UY485_.jpg 319w, https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_FMjpg_UY728_.jpg 479w, https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_FMjpg_UY337_.jpg 221w, https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_FMjpg_UX760_.jpg 760w" data-image-id="rm342562561-curr"',
+        '"alt="Antonio Banderas, Salma Hayek, Wagner Moura, Ray Winstone, Olivia Colman, Harvey Guillén, Samson Kayo, and Florence Pugh in Puss in Boots: The Last Wish (2022)" class="sc-7c0a9e7c-0 fEIEer"',
+        [12 , 12, 18, 18, 18, 12, 12]
     );
 
     $movie4 = new Movie(
-        "Weird: The Al Yankovic Story",
-        "Explores every facet of Yankovic's life, from his meteoric rise to fame with early hits like 'Eat It' and 'Like a Surgeon' to his torrid celebrity love affairs and famously depraved lifestyle.",
-        "M",
-        '"https://www.youtube.com/embed/cCNKdJ2CIJk" title="WEIRD: The Al Yankovic Story - official trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen',
-        '"https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY438_.jpg 319w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY658_.jpg 479w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY337_.jpg 245w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY576_.jpg 420w, https://m.media-amazon.com/images/M/MV5BODZmNThjMDItODE2Yy00NDNmLThiODEtZGNmZGE3MTdmMjMwXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UY720_.jpg 525w"',
-        "Daniel Radcliffe in Weird: The Al Yankovic Story (2022)",
-        ["-" , "-", 12, 12, 12, 15, 15]
+        "Margrete: Queen of the North",
+        "1402. Queen Margrete is ruling Sweden, Norway and Denmark through her adopted son, Erik. But a conspiracy is in the making and Margrete finds herself in an impossible dilemma that could shatter her life's work: the Kalmar Union.",
+        "MA 15+",
+        '"https://www.youtube.com/embed/3A9u7FoljHM" title="MARGRETE: QUEEN OF THE NORTH - Official HD Trailer - Only in Cinemas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen',
+        '"https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_.jpg" srcset="https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_FMjpg_UY474_.jpg 319w, https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_FMjpg_UY711_.jpg 479w, https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_FMjpg_UY337_.jpg 227w, https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_FMjpg_UY576_.jpg 388w, https://m.media-amazon.com/images/M/MV5BM2EwNzIxODQtZWU0ZS00ZTg3LThlMjEtMDQ4ZjQwMjcyMjdkXkEyXkFqcGdeQXVyMjMyOTAzNjM@._V1_FMjpg_UY720_.jpg 486w" data-image-id="rm2658194945-prev"',
+        "Trine Dyrholm in Margrete - Queen of the North (2021)",
+        [18 , 18, "-", "-", "-", 22, 22]
     );
 
     $movies = [$movie1, $movie2, $movie3, $movie4];
