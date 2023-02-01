@@ -42,98 +42,101 @@
                             <h3>Booking</h3>
                             <form id="movieBooking" onsubmit="return validateForm()" action="booking.php" method="post">
                                 <input type="hidden" name="Avatar: The Way of Water" value="ACT">
-                                //for loop goes here
-                                <label for="<?php echo $adultStandardSeat->seatTypeID; ?>"><?php echo $adultStandardSeat->type; ?></label>
-                                <select onchange="calcPrice()" id="<?php echo $adultStandardSeat->seatTypeID; ?>" name="<?php echo $adultStandardSeat->seatTypeID; ?>">
-                                    <option value="">Select an option</option>
-                                    <option value="1" <?php echo $adultStandardSeat->price; ?>>1</option>
-                                    <option value="2" <?php echo $adultStandardSeat->price; ?>>2</option>
-                                    <option value="3" <?php echo $adultStandardSeat->price; ?>>3</option>
-                                    <option value="4" <?php echo $adultStandardSeat->price; ?>>4</option>
-                                    <option value="5" <?php echo $adultStandardSeat->price; ?>>5</option>
-                                    <option value="6" <?php echo $adultStandardSeat->price; ?>>6</option>
-                                    <option value="7" <?php echo $adultStandardSeat->price; ?>>7</option>
-                                    <option value="8" <?php echo $adultStandardSeat->price; ?>>8</option>
-                                    <option value="9" <?php echo $adultStandardSeat->price; ?>>9</option>
-                                    <option value="10" <?php echo $adultStandardSeat->price; ?>>10</option>
-                                </select>
-                                <br>
-                                <label for="seatsSTP">Standard Concession Seat/s</label>
-                                <select onchange="calcPrice()" id="seatsSTP" name="seatsSTP">
-                                    <option value="">Select an option</option>
-                                    <option value="1" data-fullprice="19" data-discprice="14.5">1</option>
-                                    <option value="2" data-fullprice="19" data-discprice="14.5">2</option>
-                                    <option value="3" data-fullprice="19" data-discprice="14.5">3</option>
-                                    <option value="4" data-fullprice="19" data-discprice="14.5">4</option>
-                                    <option value="5" data-fullprice="19" data-discprice="14.5">5</option>
-                                    <option value="6" data-fullprice="19" data-discprice="14.5">6</option>
-                                    <option value="7" data-fullprice="19" data-discprice="14.5">7</option>
-                                    <option value="8" data-fullprice="19" data-discprice="14.5">8</option>
-                                    <option value="9" data-fullprice="19" data-discprice="14.5">9</option>
-                                    <option value="10" data-fullprice="19" data-discprice="14.5">10</option>
-                                </select>
-                                <br>
-                                <label for="seatsSTC">Standard Child Seat/s</label>
-                                <select  onchange="calcPrice()" id="seatsSTC" name="seatsSTC">
-                                    <option value="">Select an option</option>
-                                    <option value="1" data-fullprice="17.5" data-discprice="13">1</option>
-                                    <option value="2" data-fullprice="17.5" data-discprice="13">2</option>
-                                    <option value="3" data-fullprice="17.5" data-discprice="13">3</option>
-                                    <option value="4" data-fullprice="17.5" data-discprice="13">4</option>
-                                    <option value="5" data-fullprice="17.5" data-discprice="13">5</option>
-                                    <option value="6" data-fullprice="17.5" data-discprice="13">6</option>
-                                    <option value="7" data-fullprice="17.5" data-discprice="13">7</option>
-                                    <option value="8" data-fullprice="17.5" data-discprice="13">8</option>
-                                    <option value="9" data-fullprice="17.5" data-discprice="13">9</option>
-                                    <option value="10" data-fullprice="17.5" data-discprice="13">10</option>
-                                </select>
-                                <br>
-                                <label for="seatsFCA">First Class Adult Seat/s</label>
-                                <select  onchange="calcPrice()" id="seatsFCA" name="seatsFCA">
-                                    <option value="">Select an option</option>
-                                    <option value="1" data-fullprice="31" data-discprice="25">1</option>
-                                    <option value="2" data-fullprice="31" data-discprice="25">2</option>
-                                    <option value="3" data-fullprice="31" data-discprice="25">3</option>
-                                    <option value="4" data-fullprice="31" data-discprice="25">4</option>
-                                    <option value="5" data-fullprice="31" data-discprice="25">5</option>
-                                    <option value="6" data-fullprice="31" data-discprice="25">6</option>
-                                    <option value="7" data-fullprice="31" data-discprice="25">7</option>
-                                    <option value="8" data-fullprice="31" data-discprice="25">8</option>
-                                    <option value="9" data-fullprice="31" data-discprice="25">9</option>
-                                    <option value="10" data-fullprice="31" data-discprice="25">10</option>
-                                </select>
-                                <br>
-                                <label for="seats[FCP]">First Class Concession Seat/s</label>
-                                <select  onchange="calcPrice()" id="seatsFCP" name="seatsFCP">
-                                    <option value="">Select an option</option>
-                                    <option value="1" data-fullprice="28" data-discprice="23.5">1</option>
-                                    <option value="2" data-fullprice="28" data-discprice="23.5">2</option>
-                                    <option value="3" data-fullprice="28" data-discprice="23.5">3</option>
-                                    <option value="4" data-fullprice="28" data-discprice="23.5">4</option>
-                                    <option value="5" data-fullprice="28" data-discprice="23.5">5</option>
-                                    <option value="6" data-fullprice="28" data-discprice="23.5">6</option>
-                                    <option value="7" data-fullprice="28" data-discprice="23.5">7</option>
-                                    <option value="8" data-fullprice="28" data-discprice="23.5">8</option>
-                                    <option value="9" data-fullprice="28" data-discprice="23.5">9</option>
-                                    <option value="10" data-fullprice="28" data-discprice="23.5">10</option>
-                                </select>
-                                <br>
-                                <label for="seatsFCC">First Class Child Seat/s</label>
-                                <select onchange="calcPrice()" id="seatsFCC" name="seatsFCC">
-                                    <option value="">Select an option</option>
-                                    <option value="1" data-fullprice="25" data-discprice="22">1</option>
-                                    <option value="2" data-fullprice="25" data-discprice="22">2</option>
-                                    <option value="3" data-fullprice="25" data-discprice="22">3</option>
-                                    <option value="4" data-fullprice="25" data-discprice="22">4</option>
-                                    <option value="5" data-fullprice="25" data-discprice="22">5</option>
-                                    <option value="6" data-fullprice="25" data-discprice="22">6</option>
-                                    <option value="7" data-fullprice="25" data-discprice="22">7</option>
-                                    <option value="8" data-fullprice="25" data-discprice="22">8</option>
-                                    <option value="9" data-fullprice="25" data-discprice="22">9</option>
-                                    <option value="10" data-fullprice="25" data-discprice="22">10</option>
-                                </select>
-                                <br>
-                                <div>
+                                <?php if (isset($seatSelection)) {
+                                    foreach ($seatSelection as $seatSelected) { ?>
+                                        <label for="<?php echo $seatSelected->seatTypeID; ?>"><?php echo $seatSelected->type; ?></label>
+                                        <select onchange="calcPrice()" id="<?php echo $seatSelected->seatTypeID; ?>" name="<?php echo $seatSelected->seatTypeID; ?>">
+                                            <option value="">Select an option</option>
+                                            <option value="1" <?php echo $seatSelected->price; ?>>1</option>
+                                            <option value="2" <?php echo $seatSelected->price; ?>>2</option>
+                                            <option value="3" <?php echo $seatSelected->price; ?>>3</option>
+                                            <option value="4" <?php echo $seatSelected->price; ?>>4</option>
+                                            <option value="5" <?php echo $seatSelected->price; ?>>5</option>
+                                            <option value="6" <?php echo $seatSelected->price; ?>>6</option>
+                                            <option value="7" <?php echo $seatSelected->price; ?>>7</option>
+                                            <option value="8" <?php echo $seatSelected->price; ?>>8</option>
+                                            <option value="9" <?php echo $seatSelected->price; ?>>9</option>
+                                            <option value="10" <?php echo $seatSelected->price; ?>>10</option>
+                                        </select>
+                                        <br>
+                                    <?php }
+                                    } ?>
+<!--                                <label for="seatsSTP">Standard Concession Seat/s</label>-->
+<!--                                <select onchange="calcPrice()" id="seatsSTP" name="seatsSTP">-->
+<!--                                    <option value="">Select an option</option>-->
+<!--                                    <option value="1" data-fullprice="19" data-discprice="14.5">1</option>-->
+<!--                                    <option value="2" data-fullprice="19" data-discprice="14.5">2</option>-->
+<!--                                    <option value="3" data-fullprice="19" data-discprice="14.5">3</option>-->
+<!--                                    <option value="4" data-fullprice="19" data-discprice="14.5">4</option>-->
+<!--                                    <option value="5" data-fullprice="19" data-discprice="14.5">5</option>-->
+<!--                                    <option value="6" data-fullprice="19" data-discprice="14.5">6</option>-->
+<!--                                    <option value="7" data-fullprice="19" data-discprice="14.5">7</option>-->
+<!--                                    <option value="8" data-fullprice="19" data-discprice="14.5">8</option>-->
+<!--                                    <option value="9" data-fullprice="19" data-discprice="14.5">9</option>-->
+<!--                                    <option value="10" data-fullprice="19" data-discprice="14.5">10</option>-->
+<!--                                </select>-->
+<!--                                <br>-->
+<!--                                <label for="seatsSTC">Standard Child Seat/s</label>-->
+<!--                                <select  onchange="calcPrice()" id="seatsSTC" name="seatsSTC">-->
+<!--                                    <option value="">Select an option</option>-->
+<!--                                    <option value="1" data-fullprice="17.5" data-discprice="13">1</option>-->
+<!--                                    <option value="2" data-fullprice="17.5" data-discprice="13">2</option>-->
+<!--                                    <option value="3" data-fullprice="17.5" data-discprice="13">3</option>-->
+<!--                                    <option value="4" data-fullprice="17.5" data-discprice="13">4</option>-->
+<!--                                    <option value="5" data-fullprice="17.5" data-discprice="13">5</option>-->
+<!--                                    <option value="6" data-fullprice="17.5" data-discprice="13">6</option>-->
+<!--                                    <option value="7" data-fullprice="17.5" data-discprice="13">7</option>-->
+<!--                                    <option value="8" data-fullprice="17.5" data-discprice="13">8</option>-->
+<!--                                    <option value="9" data-fullprice="17.5" data-discprice="13">9</option>-->
+<!--                                    <option value="10" data-fullprice="17.5" data-discprice="13">10</option>-->
+<!--                                </select>-->
+<!--                                <br>-->
+<!--                                <label for="seatsFCA">First Class Adult Seat/s</label>-->
+<!--                                <select  onchange="calcPrice()" id="seatsFCA" name="seatsFCA">-->
+<!--                                    <option value="">Select an option</option>-->
+<!--                                    <option value="1" data-fullprice="31" data-discprice="25">1</option>-->
+<!--                                    <option value="2" data-fullprice="31" data-discprice="25">2</option>-->
+<!--                                    <option value="3" data-fullprice="31" data-discprice="25">3</option>-->
+<!--                                    <option value="4" data-fullprice="31" data-discprice="25">4</option>-->
+<!--                                    <option value="5" data-fullprice="31" data-discprice="25">5</option>-->
+<!--                                    <option value="6" data-fullprice="31" data-discprice="25">6</option>-->
+<!--                                    <option value="7" data-fullprice="31" data-discprice="25">7</option>-->
+<!--                                    <option value="8" data-fullprice="31" data-discprice="25">8</option>-->
+<!--                                    <option value="9" data-fullprice="31" data-discprice="25">9</option>-->
+<!--                                    <option value="10" data-fullprice="31" data-discprice="25">10</option>-->
+<!--                                </select>-->
+<!--                                <br>-->
+<!--                                <label for="seats[FCP]">First Class Concession Seat/s</label>-->
+<!--                                <select  onchange="calcPrice()" id="seatsFCP" name="seatsFCP">-->
+<!--                                    <option value="">Select an option</option>-->
+<!--                                    <option value="1" data-fullprice="28" data-discprice="23.5">1</option>-->
+<!--                                    <option value="2" data-fullprice="28" data-discprice="23.5">2</option>-->
+<!--                                    <option value="3" data-fullprice="28" data-discprice="23.5">3</option>-->
+<!--                                    <option value="4" data-fullprice="28" data-discprice="23.5">4</option>-->
+<!--                                    <option value="5" data-fullprice="28" data-discprice="23.5">5</option>-->
+<!--                                    <option value="6" data-fullprice="28" data-discprice="23.5">6</option>-->
+<!--                                    <option value="7" data-fullprice="28" data-discprice="23.5">7</option>-->
+<!--                                    <option value="8" data-fullprice="28" data-discprice="23.5">8</option>-->
+<!--                                    <option value="9" data-fullprice="28" data-discprice="23.5">9</option>-->
+<!--                                    <option value="10" data-fullprice="28" data-discprice="23.5">10</option>-->
+<!--                                </select>-->
+<!--                                <br>-->
+<!--                                <label for="seatsFCC">First Class Child Seat/s</label>-->
+<!--                                <select onchange="calcPrice()" id="seatsFCC" name="seatsFCC">-->
+<!--                                    <option value="">Select an option</option>-->
+<!--                                    <option value="1" data-fullprice="25" data-discprice="22">1</option>-->
+<!--                                    <option value="2" data-fullprice="25" data-discprice="22">2</option>-->
+<!--                                    <option value="3" data-fullprice="25" data-discprice="22">3</option>-->
+<!--                                    <option value="4" data-fullprice="25" data-discprice="22">4</option>-->
+<!--                                    <option value="5" data-fullprice="25" data-discprice="22">5</option>-->
+<!--                                    <option value="6" data-fullprice="25" data-discprice="22">6</option>-->
+<!--                                    <option value="7" data-fullprice="25" data-discprice="22">7</option>-->
+<!--                                    <option value="8" data-fullprice="25" data-discprice="22">8</option>-->
+<!--                                    <option value="9" data-fullprice="25" data-discprice="22">9</option>-->
+<!--                                    <option value="10" data-fullprice="25" data-discprice="22">10</option>-->
+<!--                                </select>-->
+<!--                                <br>-->
+<!--                                <div>-->
                                     <fieldset onchange="calcPrice()" id="daySelection">
                                         <legend target="_blank">Session times</legend>
                                         <input type="radio" id="monday" name="day" value="MON" data-pricing="discprice">
