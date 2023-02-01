@@ -10,6 +10,7 @@
       <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
       <script src='script.js'></script>
       <?php include 'tools.php'; ?>
+
   </head>
 
   <body>
@@ -121,7 +122,7 @@
                                         </ul>
                                     </ul>
                                     <form action="booking.php" method="GET" id="bookNowForm">
-                                        <input type="hidden" name="<?php echo $movie->title; ?>" value="ACT">
+                                        <input type="hidden" name="<?php echo $movie->title; ?>" value="<?php echo $movie->code; ?>">
                                         <input type="submit" value="Book Now" id="bookNowButton">
                                     </form>
                                 </div>

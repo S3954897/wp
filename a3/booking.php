@@ -42,19 +42,20 @@
                             <h3>Booking</h3>
                             <form id="movieBooking" onsubmit="return validateForm()" action="booking.php" method="post">
                                 <input type="hidden" name="Avatar: The Way of Water" value="ACT">
-                                <label for="seatsSTA">Standard Adult Seat/s</label>
-                                <select onchange="calcPrice()" id="seatsSTA" name="seatsSTA">
+                                //for loop goes here
+                                <label for="<?php echo $adultStandardSeat->seatTypeID; ?>"><?php echo $adultStandardSeat->type; ?></label>
+                                <select onchange="calcPrice()" id="<?php echo $adultStandardSeat->seatTypeID; ?>" name="<?php echo $adultStandardSeat->seatTypeID; ?>">
                                     <option value="">Select an option</option>
-                                    <option value="1" data-fullprice="21.5" data-discprice="16">1</option>
-                                    <option value="2" data-fullprice="21.5" data-discprice="16">2</option>
-                                    <option value="3" data-fullprice="21.5" data-discprice="16">3</option>
-                                    <option value="4" data-fullprice="21.5" data-discprice="16">4</option>
-                                    <option value="5" data-fullprice="21.5" data-discprice="16">5</option>
-                                    <option value="6" data-fullprice="21.5" data-discprice="16">6</option>
-                                    <option value="7" data-fullprice="21.5" data-discprice="16">7</option>
-                                    <option value="8" data-fullprice="21.5" data-discprice="16">8</option>
-                                    <option value="9" data-fullprice="21.5" data-discprice="16">9</option>
-                                    <option value="10" data-fullprice="21.5" data-discprice="16">10</option>
+                                    <option value="1" <?php echo $adultStandardSeat->price; ?>>1</option>
+                                    <option value="2" <?php echo $adultStandardSeat->price; ?>>2</option>
+                                    <option value="3" <?php echo $adultStandardSeat->price; ?>>3</option>
+                                    <option value="4" <?php echo $adultStandardSeat->price; ?>>4</option>
+                                    <option value="5" <?php echo $adultStandardSeat->price; ?>>5</option>
+                                    <option value="6" <?php echo $adultStandardSeat->price; ?>>6</option>
+                                    <option value="7" <?php echo $adultStandardSeat->price; ?>>7</option>
+                                    <option value="8" <?php echo $adultStandardSeat->price; ?>>8</option>
+                                    <option value="9" <?php echo $adultStandardSeat->price; ?>>9</option>
+                                    <option value="10" <?php echo $adultStandardSeat->price; ?>>10</option>
                                 </select>
                                 <br>
                                 <label for="seatsSTP">Standard Concession Seat/s</label>

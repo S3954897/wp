@@ -15,11 +15,13 @@ function toggleWireframe() {
 }
 
 let button = document.getElementById("bookNowButton")
-button.addEventListener("click", function(event){
-    event.preventDefault();
-    document.getElementById("bookNowForm").submit();
+if (button){
+    button.addEventListener("click", function(event){
+        event.preventDefault();
+        document.getElementById("bookNowForm").submit();
+    });
+}
 
-});
 
 //Navigation area dynamics
 window.onscroll = function() {
