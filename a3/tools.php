@@ -129,9 +129,15 @@
     );
 
     $seatSelection = [$adultStandardSeat, $concessionStandardSeat, $childStandardSeat, $adultFirstClassSeat, $concessionFirstClassSeat, $childFirstClassSeat];
-
-
-
+?>
+    <script>
+        let adultStandardSeat = <?php echo json_encode($adultStandardSeat); ?>;
+        let concessionStandardSeat = <?php echo json_encode($concessionStandardSeat); ?>;
+        let childStandardSeat = <?php echo json_encode($childStandardSeat); ?>;
+        let adultFirstClassSeat = <?php echo json_encode($adultFirstClassSeat); ?>;
+        let concessionFirstClassSeat = <?php echo json_encode($concessionFirstClassSeat); ?>;
+        let childFirstClassSeat = <?php echo json_encode($childFirstClassSeat); ?>
+    </script>
 
 
 

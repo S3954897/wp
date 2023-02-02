@@ -1,4 +1,5 @@
 /* Insert your javascript here */
+
 function toggleWireframe() {
 
     // get references to styleshets with preset id attributes
@@ -25,8 +26,6 @@ if (button){
 
 //Navigation area dynamics
 window.onscroll = function() {
-    console.clear();
-    console.log("Win Y: " + window.scrollY);
     let navlinks = document.getElementsByTagName('nav')[0].getElementsByTagName('a');
     let areas = document.getElementsByTagName('main')[0].getElementsByClassName('area');
     for (let i = 0; i<areas.length ; i++) {
@@ -40,13 +39,80 @@ window.onscroll = function() {
     }
 }
 
+// Seats pricing information
+window.onload = function() {
+    if (window.location.href.indexOf("index.php") !== -1) {
+        let outputFullPriceSTA = document.getElementById("displayFullPriceSTA");
+        let outputDiscPriceSTA = document.getElementById("displayDiscPriceSTA");
+        let priceAttr = adultStandardSeat.price;
+        let fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
+        let discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
+        let fullPrice = parseFloat(fullPriceStr);
+        let discPrice = parseFloat(discPriceStr);
+        outputFullPriceSTA.innerHTML = `$${fullPrice.toFixed(2)}`;
+        outputDiscPriceSTA.innerHTML = `$${discPrice.toFixed(2)}`;
+
+        let outputFullPriceSTP = document.getElementById("displayFullPriceSTP");
+        let outputDiscPriceSTP = document.getElementById("displayDiscPriceSTP");
+        priceAttr = concessionStandardSeat.price;
+        fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
+        discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
+        fullPrice = parseFloat(fullPriceStr);
+        discPrice = parseFloat(discPriceStr);
+        outputFullPriceSTP.innerHTML = `$${fullPrice.toFixed(2)}`;
+        outputDiscPriceSTP.innerHTML = `$${discPrice.toFixed(2)}`;
+
+        let outputFullPriceSTC = document.getElementById("displayFullPriceSTC");
+        let outputDiscPriceSTC = document.getElementById("displayDiscPriceSTC");
+        priceAttr = childStandardSeat.price;
+        fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
+        discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
+        fullPrice = parseFloat(fullPriceStr);
+        discPrice = parseFloat(discPriceStr);
+        outputFullPriceSTC.innerHTML = `$${fullPrice.toFixed(2)}`;
+        outputDiscPriceSTC.innerHTML = `$${discPrice.toFixed(2)}`;
+
+        let outputFullPriceFCA = document.getElementById("displayFullPriceFCA");
+        let outputDiscPriceFCA = document.getElementById("displayDiscPriceFCA");
+        priceAttr = adultFirstClassSeat.price;
+        fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
+        discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
+        fullPrice = parseFloat(fullPriceStr);
+        discPrice = parseFloat(discPriceStr);
+        outputFullPriceFCA.innerHTML = `$${fullPrice.toFixed(2)}`;
+        outputDiscPriceFCA.innerHTML = `$${discPrice.toFixed(2)}`;
+
+        let outputFullPriceFCP = document.getElementById("displayFullPriceFCP");
+        let outputDiscPriceFCP = document.getElementById("displayDiscPriceFCP");
+        priceAttr = concessionFirstClassSeat.price;
+        fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
+        discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
+        fullPrice = parseFloat(fullPriceStr);
+        discPrice = parseFloat(discPriceStr);
+        outputFullPriceFCP.innerHTML = `$${fullPrice.toFixed(2)}`;
+        outputDiscPriceFCP.innerHTML = `$${discPrice.toFixed(2)}`;
+
+        let outputFullPriceFCC = document.getElementById("displayFullPriceFCC");
+        let outputDiscPriceFCC = document.getElementById("displayDiscPriceFCC");
+        priceAttr = childFirstClassSeat.price;
+        fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
+        discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
+        fullPrice = parseFloat(fullPriceStr);
+        discPrice = parseFloat(discPriceStr);
+        outputFullPriceFCC.innerHTML = `$${fullPrice.toFixed(2)}`;
+        outputDiscPriceFCC.innerHTML = `$${discPrice.toFixed(2)}`;
+    }
+}
+
+
 //Seat and Day Pricing calculation
 function calcPrice() {
+
     let seatSelectSTA = document.querySelector("#seatsSTA");
     let selectedOptionSTA = seatSelectSTA.options[seatSelectSTA.selectedIndex];
     let fullPriceSTA = selectedOptionSTA.getAttribute("data-fullprice");
     let discPriceSTA = selectedOptionSTA.getAttribute("data-discprice");
-    let seatsValueSTA = selectedOptionSTA.value
+    let seatsValueSTA = selectedOptionSTA.value;
 
     let seatSelectSTP = document.querySelector("#seatsSTP");
     let selectedOptionSTP = seatSelectSTP.options[seatSelectSTP.selectedIndex];
@@ -84,7 +150,7 @@ function calcPrice() {
 
     let bookingTotalPrice = 0;
 
-    console.clear()
+    console.clear();
     //loop to read radio option for day/time
     for (let i=0; i<dayTime.length;i++) {
         if (dayTime[i].checked){

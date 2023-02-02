@@ -68,21 +68,21 @@
                     <h3>Standard seat pricing</h3>
                     <img id= "standardSeatingImage"  src="https://titan.csit.rmit.edu.au/~s3954897/media/Profern-Standard-Twin.png" alt = "Standard Seating">
                     <table id = "standardSeatingTable">
-                        <tbody>
+                        <tbody >
                             <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
-                            <tr><td>Adult</td><td>$16.00</td><td>$21.50</td></tr>
-                            <tr><td>Concession</td><td>$14.50</td><td>$19.00</td></tr>
-                            <tr><td>Child</td><td>$13.00</td><td>$17.50</td></tr>
+                            <tr><td>Adult</td><td id="displayFullPriceSTA"></td><td id="displayDiscPriceSTA"></td></tr>
+                            <tr><td>Concession</td ><td id="displayFullPriceSTP"></td><td id="displayDiscPriceSTP"></td></tr>
+                            <tr><td>Child</td><td id="displayFullPriceSTC"></td><td id="displayDiscPriceSTC"></td></tr>
                         </tbody>
                     </table>
                     <h3>First class seat pricing</h3>
                     <img src="https://titan.csit.rmit.edu.au/~s3954897/media/Profern-Verona-Twin.png" alt = "First Class Seating">
                     <table id="firstClassSeating">
                         <tbody>
-                            <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
-                            <tr><td>Adult</td><td>$25.00</td><td>$31.00</td></tr>
-                            <tr><td>Concession</td><td>$23.50</td><td>$28.00</td></tr>
-                            <tr><td>Child</td><td>$22.00</td><td>$25.00</td></tr>
+                        <tr><th>Type</th><th>Discount Price</th><th>Normal Price</th></tr>
+                        <tr><td>Adult</td><td id="displayFullPriceFCA"></td><td id="displayDiscPriceFCA"></td></tr>
+                        <tr><td>Concession</td ><td id="displayFullPriceFCP"></td><td id="displayDiscPriceFCP"></td></tr>
+                        <tr><td>Child</td><td id="displayFullPriceFCC"></td><td id="displayDiscPriceFCC"></td></tr>
                         </tbody>
                     </table>
                 </article>
@@ -110,15 +110,29 @@
                                     <ul>
                                         <li class = "showDays1">Monday - Tuesday</li>
                                         <ul>
-                                            <li class = "showTimes1"><?php echo ($movie->sessionDaysAndTimes[0]); ?></li>
+                                            <li class = "showTimes1"><?php     $time = $movie->sessionDaysAndTimes[0];
+                                                if ($time !== '-') {
+                                                    echo date("g:i a", strtotime($time . ":00"));
+                                                } ?>
+                                            </li>
                                         </ul>
                                         <li class = "showDays2">Wednesday - Friday</li>
                                         <ul>
-                                            <li class = "showTimes2"><?php echo ($movie->sessionDaysAndTimes[2]); ?></li>
+                                            <li class = "showTimes2"><?php
+                                                $time = $movie->sessionDaysAndTimes[2];
+                                                if ($time !== '-'){
+                                                    echo date("g:i a", strtotime($time . ":00"));
+                                                } ?>
+                                            </li>
                                         </ul>
                                         <li class = "showDays3">Saturday - Sunday</li>
                                         <ul>
-                                            <li class = "showTimes3"><?php echo ($movie->sessionDaysAndTimes[5]); ?></li>
+                                            <li class = "showTimes3"><?php
+                                                $time = $movie->sessionDaysAndTimes[5];
+                                                if ($time !== '-'){
+                                                    echo date("g:i a", strtotime($time . ":00"));
+                                                } ?>
+                                            </li>
                                         </ul>
                                     </ul>
                                     <form action="booking.php" method="GET" id="bookNowForm">
@@ -149,3 +163,4 @@
 
   </body>
 </html>
+
