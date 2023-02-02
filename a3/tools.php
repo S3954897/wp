@@ -85,7 +85,7 @@
         }
     }
 
-    $seatSelected = new SeatType (
+    $adultStandardSeat = new SeatType (
         "Standard Adult Seat/s",
         "seatsSTA",
         "STA",
@@ -93,44 +93,43 @@
     );
 
     $concessionStandardSeat = new SeatType(
-        "Standard Adult Seat/s",
-        "seatsSTA",
-        "STA",
-        'data-fullprice="21.5" data-discprice="16"'
+        "Standard Concession Seat/s",
+        "seatsSTP",
+        "STP",
+        'data-fullprice="19" data-discprice="14.5"'
     );
 
     $childStandardSeat = new SeatType(
-        "Standard Adult Seat/s",
-        "seatsSTA",
-        "STA",
-        'data-fullprice="21.5" data-discprice="16"'
+        "Standard Child Seat/s",
+        "seatsSTC",
+        "STC",
+        'data-fullprice="17.5" data-discprice="13"'
     );
 
 
     $adultFirstClassSeat = new SeatType (
-        "Standard Adult Seat/s",
-        "seatsSTA",
-        "STA",
-        'data-fullprice="21.5" data-discprice="16"'
+        "First Class Adult Seat/s",
+        "seatsFCA",
+        "FCA",
+        'data-fullprice="31" data-discprice="25"'
     );
 
     $concessionFirstClassSeat = new SeatType(
-        "Standard Adult Seat/s",
-        "seatsSTA",
-        "STA",
-        'data-fullprice="21.5" data-discprice="16"'
+        "First Class Concession Seat/s",
+        "seatsFCP",
+        "FCP",
+        'data-fullprice="28" data-discprice="23.5"'
     );
 
     $childFirstClassSeat = new SeatType(
-        "Standard Adult Seat/s",
-        "seatsSTA",
-        "STA",
-        'data-fullprice="21.5" data-discprice="16"'
+        "First Class Child Seat/s",
+        "seatsFCC",
+        "FCC",
+        'data-fullprice="25" data-discprice="22"'
     );
 
-if (!empty($adultStandardSeat)) {
     $seatSelection = [$adultStandardSeat, $concessionStandardSeat, $childStandardSeat, $adultFirstClassSeat, $concessionFirstClassSeat, $childFirstClassSeat];
-}
+
 
 
 
