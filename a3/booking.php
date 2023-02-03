@@ -13,31 +13,30 @@
   </head>
 
   <body>
-      <div class = "headerArea">
-          <header>
-              <h1>Lunardo</h1>
-          </header>
-      </div>
+  <?php
+    $show = $_GET["show"];
+        if (isset($movies)) {
+            foreach ($movies as $movie) {
+                if ($show === $movie->code){ ?>
+                    <div class = "headerArea">
+                      <header>
+                          <h1>Lunardo</h1>
+                      </header>
+                    </div>
 
-      <div class = "navArea">
-          <nav>
-              <ul class = "navGrid">
-                  <li><a href="index.php#aboutUs">About us</a></li>
-                  <li><a href="index.php#seatsAndPricing">Seats and Pricing</a></li>
-                  <li><a href="index.php#nowShowing">Now Showing</a></li>
-              </ul>
-          </nav>
-      </div>
-
-    <main>
-        <div class="mainArea">
-            <div class="selectedMovie">
-                <div>
-                    <?php
-                        $show = $_GET["show"];
-                        if (isset($movies)) {
-                            foreach ($movies as $movie) {
-                                if ($show === $movie->code){ ?>
+                    <div class = "navArea">
+                      <nav>
+                          <ul class = "navGrid">
+                              <li><a href="index.php#aboutUs">About us</a></li>
+                              <li><a href="index.php#seatsAndPricing">Seats and Pricing</a></li>
+                              <li><a href="index.php#nowShowing">Now Showing</a></li>
+                          </ul>
+                      </nav>
+                    </div>
+                    <main>
+                        <div class="mainArea">
+                            <div class="selectedMovie">
+                                <div>
                                     <div class = "bookingFormArea">
                                         <h3>Booking</h3>
                                         <h3><?php echo $movie->title ?></h3>
@@ -163,40 +162,34 @@
                                                     <input type="text" id="user[mobile]" name="user[mobile]" placeholder="Enter your mobile">
                                                     <br>
                                                     <button type="submit">Submit your Booking</button>
-                                                    </form>
-
-                                                </div>
-                                                <div class="showInfoFull">
-                                                    <h3><?php echo $movie->title ?></h3>
-                                                    <p><?php echo $movie->descriptionFull ?></p>
-                                                    <p><?php echo $movie->directors ?></p>
-                                                    <p><?php echo $movie->writers ?></p>
-                                                    <p><?php echo $movie->actors ?></p>
-                                                </div>
-                                                <div class="trailer">
-                                                    <iframe src=<?php echo $movie->trailer ?></iframe>
-                                                </div>
-
-                                <?php }
-
-                            }
-                            header("Location: index.php");
-                        }
-                    ?>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="footerArea">
-      <div>&copy;<script>
-        document.write(new Date().getFullYear());
-      </script> Grant Nicholas, S3954897. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
-      <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
-      <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
-    </footer>
-
-
+                                        </form>
+                                    </div>
+                                    <div class="showInfoFull">
+                                        <h3><?php echo $movie->title ?></h3>
+                                        <p><?php echo $movie->descriptionFull ?></p>
+                                        <p><?php echo $movie->directors ?></p>
+                                        <p><?php echo $movie->writers ?></p>
+                                        <p><?php echo $movie->actors ?></p>
+                                    </div>
+                                    <div class="trailer">
+                                        <iframe src=<?php echo $movie->trailer ?></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <footer class="footerArea">
+                      <div>&copy;<script>
+                        document.write(new Date().getFullYear());
+                      </script> Grant Nicholas, S3954897. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
+                      <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
+                      <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
+                    </footer>
+                <?php }
+            }
+            header("Location: index.php");
+        }
+  ?>
 
   </body>
 </html>
