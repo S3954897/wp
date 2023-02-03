@@ -110,7 +110,8 @@
                                     <ul>
                                         <li class = "showDays1">Monday - Tuesday</li>
                                         <ul>
-                                            <li class = "showTimes1"><?php     $time = $movie->sessionDaysAndTimes[0];
+                                            <li class = "showTimes1"><?php
+                                                $time = $movie->sessionDaysAndTimes[0];
                                                 if ($time !== '-') {
                                                     echo date("g:i a", strtotime($time . ":00"));
                                                 } ?>
@@ -136,7 +137,7 @@
                                         </ul>
                                     </ul>
                                     <form action="booking.php" method="GET" id="bookNowForm">
-                                        <input type="hidden" name="<?php echo $movie->title; ?>" value="<?php echo $movie->code; ?>">
+                                        <input type="hidden" name="show" value="<?php echo $movie->code; ?>">
                                         <input type="submit" value="Book Now" id="bookNowButton">
                                     </form>
                                 </div>

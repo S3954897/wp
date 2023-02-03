@@ -33,113 +33,130 @@
         <div class="mainArea">
             <div class="selectedMovie">
                 <div>
-                    <div id="div1" <?php if (isset($_GET["Avatar:_The_Way_of_Water"]) == "ACT") {
-                        echo 'style="display:block;"'; }
-                    else {
-                        echo 'style="display:none;"';
-                    } ?>>
-                        <div class = "bookingFormArea">
-                            <h3>Booking</h3>
-                            <form id="movieBooking" onsubmit="return validateForm()" action="booking.php" method="post">
-                                <input type="hidden" name="Avatar: The Way of Water" value="ACT">
-                                <?php if (isset($seatSelection)) {
-                                    foreach ($seatSelection as $seatSelected) { ?>
-                                        <label for="<?php echo $seatSelected->seatTypeID; ?>"><?php echo $seatSelected->type; ?></label>
-                                        <select onchange="calcPrice()" id="<?php echo $seatSelected->seatTypeID; ?>" name="<?php echo $seatSelected->seatTypeID; ?>">
-                                            <option value="">Select an option</option>
-                                            <option value="1" <?php echo $seatSelected->price; ?>>1</option>
-                                            <option value="2" <?php echo $seatSelected->price; ?>>2</option>
-                                            <option value="3" <?php echo $seatSelected->price; ?>>3</option>
-                                            <option value="4" <?php echo $seatSelected->price; ?>>4</option>
-                                            <option value="5" <?php echo $seatSelected->price; ?>>5</option>
-                                            <option value="6" <?php echo $seatSelected->price; ?>>6</option>
-                                            <option value="7" <?php echo $seatSelected->price; ?>>7</option>
-                                            <option value="8" <?php echo $seatSelected->price; ?>>8</option>
-                                            <option value="9" <?php echo $seatSelected->price; ?>>9</option>
-                                            <option value="10" <?php echo $seatSelected->price; ?>>10</option>
-                                        </select>
-                                    <?php }
-                                    } ?>
+                    <?php
+                        $show = $_GET["show"];
+                        if (isset($movies)) {
+                            foreach ($movies as $movie) {
+                                if ($show === $movie->code){ ?>
+                                    <div class = "bookingFormArea">
+                                        <h3>Booking</h3>
+                                        <form id="movieBooking" onsubmit="return validateForm()" action="booking.php" method="post">
+                                            <input type="hidden" name="<?php $movie->title?>">
+                                            <?php if (isset($seatSelection)) {
+                                                foreach ($seatSelection as $seatSelected) { ?>
+                                                    <label for="<?php echo $seatSelected->seatTypeID; ?>"><?php echo $seatSelected->type; ?></label>
+                                                    <select onchange="calcPrice()" id="<?php echo $seatSelected->seatTypeID; ?>" name="<?php echo $seatSelected->seatTypeID; ?>">
+                                                        <option value="">Select an option</option>
+                                                        <option value="1" <?php echo $seatSelected->price; ?>>1</option>
+                                                        <option value="2" <?php echo $seatSelected->price; ?>>2</option>
+                                                        <option value="3" <?php echo $seatSelected->price; ?>>3</option>
+                                                        <option value="4" <?php echo $seatSelected->price; ?>>4</option>
+                                                        <option value="5" <?php echo $seatSelected->price; ?>>5</option>
+                                                        <option value="6" <?php echo $seatSelected->price; ?>>6</option>
+                                                        <option value="7" <?php echo $seatSelected->price; ?>>7</option>
+                                                        <option value="8" <?php echo $seatSelected->price; ?>>8</option>
+                                                        <option value="9" <?php echo $seatSelected->price; ?>>9</option>
+                                                        <option value="10" <?php echo $seatSelected->price; ?>>10</option>
+                                                    </select>
+                                                    <?php }
+                                                    } ?>
+                                                    <fieldset onchange="calcPrice()" id="daySelection">
+                                                        <legend target="_blank">Session times</legend>
 
-                                    <fieldset onchange="calcPrice()" id="daySelection">
-                                        <legend target="_blank">Session times</legend>
-                                        <input type="radio" id="monday" name="day" value="MON" data-pricing="discprice">
-                                        <label for="monday">Monday 9pm</label>
-                                        <input type="radio" id="tuesday" name="day" value="TUE" data-pricing="fullprice">
-                                        <label for="tuesday">Tuesday 9pm</label>
-                                        <input type="radio" id="wednesday" name="day" value="WED" data-pricing="fullprice">
-                                        <label for="wednesday">Wednesday 9pm</label>
-                                        <input type="radio" id="thursday" name="day" value="THU" data-pricing="fullprice">
-                                        <label for="thursday">Thursday 9pm</label>
-                                        <input type="radio" id="friday" name="day" value="FRI" data-pricing="fullprice">
-                                        <label for="friday">Friday 9pm</label>
-                                        <input type="radio" id="saturday" name="day" value="SAT" data-pricing="fullprice">
-                                        <label for="saturday">Saturday 6pm</label>
-                                        <input type="radio" id="sunday" name="day" value="SUN" data-pricing="fullprice">
-                                        <label for="sunday">Sunday 6pm</label>
-                                    </fieldset>
-                                    <h3>Customer Detail</h3>
-                                    <label for="user[name]">Full Name</label>
-                                    <br>
-                                    <input type="text" id="user[name]" name="user[name]" placeholder="Enter your full name">
-                                    <br>
-                                    <label for="user[email]">Email</label>
-                                    <br>
-                                    <input type="text" id="user[email]" name="user[email]" placeholder="Enter your email">
-                                    <br>
-                                    <label for="user[mobile]">Mobile</label>
-                                    <br>
-                                    <input type="text" id="user[mobile]" name="user[mobile]" placeholder="Enter your mobile">
-                                <br>
-                                <button type="submit">Submit your Booking</button>
-                            </form>
 
-                        </div>
-                        <div class="showInfoFull" id="showInfoFull_Avatar">
-                            <h3>Avatar: The Way of Water</h3>
-                            <p>Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.</p>
-                            <p>Director: James Cameron</p>
-                            <p>Writers: James Cameron, Rick Jaffa,Amanda Silver</p>
-                            <p>Stars: Sam Worthington, Zoe Saldana, Sigourney Weaver</p>
-                        </div>
-                        <div class="trailer">
-                            <iframe src="https://www.youtube.com/embed/d9MyW72ELq0" title="Avatar: The Way of Water | Official Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div id="div2" <?php if (isset($_GET["Weird:_The_Al_Yankovic_Story"]) == "RMC") {
-                        echo 'style="display:block;"'; }
-                    else {
-                        echo 'style="display:none;"';
-                    } ?>>
-                        <p>This is div 2</p>
-                        <div class="trailer">
-                            <iframe src="https://www.youtube.com/embed/cCNKdJ2CIJk" title="WEIRD: The Al Yankovic Story - official trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div id="div3" <?php if (isset($_GET["Puss_in_Boots:_The_Last_Wish"]) == "FAM") {
-                        echo 'style="display:block;"'; }
-                    else {
-                        echo 'style="display:none;"';
-                    } ?>>
-                        <p>This is div 3</p>
-                        <div class="trailer">
-                            <iframe src="https://www.youtube.com/embed/fOngjQYypZU" title="Puss in Boots: The Last Wish | Official Trailer 3 (Universal Pictures) HD" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div id="div2" <?php if (isset($_GET["Margrete:_Queen_of_the_North"]) == "AHF") {
-                        echo 'style="display:block;"'; }
-                    else {
-                        echo 'style="display:none;"';
-                    } ?>>
-                        <p>This is div 4</p>
-                        <div class="trailer">
-                            <iframe src="https://www.youtube.com/embed/3A9u7FoljHM" title="MARGRETE: QUEEN OF THE NORTH - Official HD Trailer - Only in Cinemas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    </div>
+
+                                                        <input type="radio" id="monday" name="day" value="MON" data-pricing="discprice">
+                                                        <label for="monday"<?php
+                                                            $time = $movie->sessionDaysAndTimes[0];
+                                                            if ($time !== '-') {
+                                                                echo "Monday - ", date("g:i a", strtotime($time . ":00"));
+                                                            } else {
+                                                                echo 'style="display:none"';
+                                                            }
+                                                            ?> >
+                                                        </label>
+
+
+
+
+
+
+
+
+                                                        <input type="radio" id="tuesday" name="day" value="TUE" data-pricing="fullprice">
+                                                        <label for="tuesday">Tuesday - <?php
+                                                            $time = $movie->sessionDaysAndTimes[1];
+                                                            if ($time !== '-') {
+                                                                echo date("g:i a", strtotime($time . ":00"));
+                                                            } ?></label>
+                                                        <input type="radio" id="wednesday" name="day" value="WED" data-pricing="fullprice">
+                                                        <label for="wednesday">Wednesday - <?php
+                                                            $time = $movie->sessionDaysAndTimes[2];
+                                                            if ($time !== '-') {
+                                                                echo date("g:i a", strtotime($time . ":00"));
+                                                            } ?></label>
+                                                        <input type="radio" id="thursday" name="day" value="THU" data-pricing="fullprice">
+                                                        <label for="thursday">Thursday - <?php
+                                                            $time = $movie->sessionDaysAndTimes[3];
+                                                            if ($time !== '-') {
+                                                                echo date("g:i a", strtotime($time . ":00"));
+                                                            } ?></label>
+                                                        <input type="radio" id="friday" name="day" value="FRI" data-pricing="fullprice">
+                                                        <label for="friday">Friday - <?php
+                                                            $time = $movie->sessionDaysAndTimes[4];
+                                                            if ($time !== '-') {
+                                                                echo date("g:i a", strtotime($time . ":00"));
+                                                            } ?></label>
+                                                        <input type="radio" id="saturday" name="day" value="SAT" data-pricing="fullprice">
+                                                        <label for="saturday">Saturday - <?php
+                                                            $time = $movie->sessionDaysAndTimes[5];
+                                                            if ($time !== '-') {
+                                                                echo date("g:i a", strtotime($time . ":00"));
+                                                            } ?></label>
+                                                        <input type="radio" id="sunday" name="day" value="SUN" data-pricing="fullprice">
+                                                        <label for="sunday">Sunday - <?php
+                                                            $time = $movie->sessionDaysAndTimes[6];
+                                                            if ($time !== '-') {
+                                                                echo date("g:i a", strtotime($time . ":00"));
+                                                            } ?></label>
+                                                    </fieldset>
+                                                    <h3>Customer Detail</h3>
+                                                    <label for="user[name]">Full Name</label>
+                                                    <br>
+                                                    <input type="text" id="user[name]" name="user[name]" placeholder="Enter your full name">
+                                                    <br>
+                                                    <label for="user[email]">Email</label>
+                                                    <br>
+                                                    <input type="text" id="user[email]" name="user[email]" placeholder="Enter your email">
+                                                    <br>
+                                                    <label for="user[mobile]">Mobile</label>
+                                                    <br>
+                                                    <input type="text" id="user[mobile]" name="user[mobile]" placeholder="Enter your mobile">
+                                                    <br>
+                                                    <button type="submit">Submit your Booking</button>
+                                                    </form>
+
+                                                </div>
+                                                <div class="showInfoFull">
+                                                    <h3><?php echo $movie->title ?></h3>
+                                                    <p><?php echo $movie->descriptionFull ?></p>
+                                                    <p><?php echo $movie->directors ?></p>
+                                                    <p><?php echo $movie->writers ?></p>
+                                                    <p><?php echo $movie->actors ?></p>
+                                                </div>
+                                                <div class="trailer">
+                                                    <iframe src=<?php echo $movie->trailer ?></iframe>
+                                                </div>
+
+                                <?php }
+                            }
+                        } else {
+                            header("Location: index.php");
+                        }
+                    ?>
                 </div>
             </div>
         </div>
-
     </main>
 
     <footer class="footerArea">
