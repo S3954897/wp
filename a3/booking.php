@@ -40,6 +40,7 @@
                                 if ($show === $movie->code){ ?>
                                     <div class = "bookingFormArea">
                                         <h3>Booking</h3>
+                                        <h3><?php echo $movie->title ?></h3>
                                         <form id="movieBooking" onsubmit="return validateForm()" action="booking.php" method="post">
                                             <input type="hidden" name="<?php $movie->title?>">
                                             <?php if (isset($seatSelection)) {
@@ -62,63 +63,91 @@
                                                     } ?>
                                                     <fieldset onchange="calcPrice()" id="daySelection">
                                                         <legend target="_blank">Session times</legend>
-
-
-
                                                         <input type="radio" id="monday" name="day" value="MON" data-pricing="discprice">
-                                                        <label for="monday"<?php
-                                                            $time = $movie->sessionDaysAndTimes[0];
-                                                            if ($time !== '-') {
-                                                                echo "Monday - ", date("g:i a", strtotime($time . ":00"));
-                                                            } else {
-                                                                echo 'style="display:none"';
-                                                            }
-                                                            ?> >
+                                                        <label for="monday"
+                                                            <?php
+                                                                $time = $movie->sessionDaysAndTimes[0];
+                                                                if (is_numeric($time)) {
+                                                                    echo  "style='display:block'"; ?> > <?php echo "Monday - ", date("g:i a", strtotime($time . ":00"));
+                                                                }
+                                                                else {
+                                                                    echo "style='display:none'" ;?> > <?php
+                                                                }
+                                                            ?>
                                                         </label>
 
-
-
-
-
-
-
-
                                                         <input type="radio" id="tuesday" name="day" value="TUE" data-pricing="fullprice">
-                                                        <label for="tuesday">Tuesday - <?php
-                                                            $time = $movie->sessionDaysAndTimes[1];
-                                                            if ($time !== '-') {
-                                                                echo date("g:i a", strtotime($time . ":00"));
-                                                            } ?></label>
+                                                        <label for="tuesday"
+                                                            <?php
+                                                                $time = $movie->sessionDaysAndTimes[1];
+                                                                if (is_numeric($time)) {
+                                                                    echo  "style='display:block'"; ?> > <?php echo "Tuesday - ", date("g:i a", strtotime($time . ":00"));
+                                                                }
+                                                                else {
+                                                                    echo "style='display:none'" ;?> > <?php
+                                                                }
+                                                            ?>
+                                                        </label>
                                                         <input type="radio" id="wednesday" name="day" value="WED" data-pricing="fullprice">
-                                                        <label for="wednesday">Wednesday - <?php
-                                                            $time = $movie->sessionDaysAndTimes[2];
-                                                            if ($time !== '-') {
-                                                                echo date("g:i a", strtotime($time . ":00"));
-                                                            } ?></label>
+                                                        <label for="wednesday"
+                                                            <?php
+                                                                $time = $movie->sessionDaysAndTimes[2];
+                                                                if (is_numeric($time)) {
+                                                                    echo  "style='display:block'"; ?> > <?php echo "Wednesday - ", date("g:i a", strtotime($time . ":00"));
+                                                                }
+                                                                else {
+                                                                    echo "style='display:none'" ;?> > <?php
+                                                                }
+                                                            ?>
+                                                        </label>
                                                         <input type="radio" id="thursday" name="day" value="THU" data-pricing="fullprice">
-                                                        <label for="thursday">Thursday - <?php
-                                                            $time = $movie->sessionDaysAndTimes[3];
-                                                            if ($time !== '-') {
-                                                                echo date("g:i a", strtotime($time . ":00"));
-                                                            } ?></label>
+                                                        <label for="thursday"
+                                                            <?php
+                                                                $time = $movie->sessionDaysAndTimes[3];
+                                                                if (is_numeric($time)) {
+                                                                    echo  "style='display:block'"; ?> > <?php echo "Thursday - ", date("g:i a", strtotime($time . ":00"));
+                                                                }
+                                                                else {
+                                                                    echo "style='display:none'" ;?> > <?php
+                                                                }
+                                                            ?>
+                                                        </label>
                                                         <input type="radio" id="friday" name="day" value="FRI" data-pricing="fullprice">
-                                                        <label for="friday">Friday - <?php
-                                                            $time = $movie->sessionDaysAndTimes[4];
-                                                            if ($time !== '-') {
-                                                                echo date("g:i a", strtotime($time . ":00"));
-                                                            } ?></label>
+                                                        <label for="friday"
+                                                            <?php
+                                                                $time = $movie->sessionDaysAndTimes[4];
+                                                                if (is_numeric($time)) {
+                                                                    echo  "style='display:block'"; ?> > <?php echo "Friday - ", date("g:i a", strtotime($time . ":00"));
+                                                                }
+                                                                else {
+                                                                    echo "style='display:none'" ;?> > <?php
+                                                                }
+                                                            ?>
+                                                        </label>
                                                         <input type="radio" id="saturday" name="day" value="SAT" data-pricing="fullprice">
-                                                        <label for="saturday">Saturday - <?php
-                                                            $time = $movie->sessionDaysAndTimes[5];
-                                                            if ($time !== '-') {
-                                                                echo date("g:i a", strtotime($time . ":00"));
-                                                            } ?></label>
+                                                        <label for="saturday"
+                                                            <?php
+                                                                $time = $movie->sessionDaysAndTimes[5];
+                                                                if (is_numeric($time)) {
+                                                                    echo  "style='display:block'"; ?> > <?php echo "Saturday - ", date("g:i a", strtotime($time . ":00"));
+                                                                }
+                                                                else {
+                                                                    echo "style='display:none'" ;?> > <?php
+                                                                }
+                                                            ?>
+                                                        </label>
                                                         <input type="radio" id="sunday" name="day" value="SUN" data-pricing="fullprice">
-                                                        <label for="sunday">Sunday - <?php
-                                                            $time = $movie->sessionDaysAndTimes[6];
-                                                            if ($time !== '-') {
-                                                                echo date("g:i a", strtotime($time . ":00"));
-                                                            } ?></label>
+                                                        <label for="sunday"
+                                                            <?php
+                                                                $time = $movie->sessionDaysAndTimes[6];
+                                                                if (is_numeric($time)) {
+                                                                    echo  "style='display:block'"; ?> > <?php echo "Sunday - ", date("g:i a", strtotime($time . ":00"));
+                                                                }
+                                                                else {
+                                                                    echo "style='display:none'" ;?> > <?php
+                                                                }
+                                                            ?>
+                                                        </label>
                                                     </fieldset>
                                                     <h3>Customer Detail</h3>
                                                     <label for="user[name]">Full Name</label>
@@ -149,8 +178,8 @@
                                                 </div>
 
                                 <?php }
+
                             }
-                        } else {
                             header("Location: index.php");
                         }
                     ?>
