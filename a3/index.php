@@ -10,7 +10,9 @@
       <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
       <script src='script.js'></script>
       <?php include 'tools.php';
-      unset($_SESSION["show"]);?>
+          unset($_SESSION["show"]);
+          unset($_SESSION["form_data"]);
+      ?>
 
   </head>
 
