@@ -24,7 +24,8 @@
     }
         if (isset($movies)) {
             foreach ($movies as $movie) {
-                if ($show === $movie->code){ ?>
+                if ($show === $movie->code){
+                    $movieCodeChecker = $movie->code ?>
                     <div class = "headerArea">
                       <header>
                           <h1>Lunardo</h1>
@@ -47,6 +48,12 @@
                                     <div class = "bookingFormArea">
                                         <?php
                                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                                if (isset($_POST) && ($movie->code == $movieCodeChecker)) {
+                                                    echo "movie code ok";
+                                                } else {
+                                                    header("Location: index.php");
+                                                }
+
                                                 // your form processing logic here
 
                                                 // store the POST data in session
@@ -67,6 +74,7 @@
                                         <h3><?php echo $movie->title ?></h3>
                                         <form id="movieBooking" onsubmit="return validateForm()" action="booking.php" method="post">
                                             <input type="hidden" name="<?php $movie->title?>">
+                                            <input type="hidden" name="<?php $movieCodeChecker?>">
                                                 <?php
                                                     if (isset($seatSelection)) {
                                                         foreach ($seatSelection as $seatSelected) { ?>
