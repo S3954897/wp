@@ -44,7 +44,7 @@ window.onload = function() {
     if (window.location.href.indexOf("index.php") !== -1) {
         let outputFullPriceSTA = document.getElementById("displayFullPriceSTA");
         let outputDiscPriceSTA = document.getElementById("displayDiscPriceSTA");
-        let priceAttr = adultStandardSeat.price;
+        let priceAttr = adultStandardSeat["price"];
         let fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
         let discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
         let fullPrice = parseFloat(fullPriceStr);
@@ -54,7 +54,7 @@ window.onload = function() {
 
         let outputFullPriceSTP = document.getElementById("displayFullPriceSTP");
         let outputDiscPriceSTP = document.getElementById("displayDiscPriceSTP");
-        priceAttr = concessionStandardSeat.price;
+        priceAttr = concessionStandardSeat["price"];
         fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
         discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
         fullPrice = parseFloat(fullPriceStr);
@@ -64,7 +64,7 @@ window.onload = function() {
 
         let outputFullPriceSTC = document.getElementById("displayFullPriceSTC");
         let outputDiscPriceSTC = document.getElementById("displayDiscPriceSTC");
-        priceAttr = childStandardSeat.price;
+        priceAttr = childStandardSeat["price"];
         fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
         discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
         fullPrice = parseFloat(fullPriceStr);
@@ -74,7 +74,7 @@ window.onload = function() {
 
         let outputFullPriceFCA = document.getElementById("displayFullPriceFCA");
         let outputDiscPriceFCA = document.getElementById("displayDiscPriceFCA");
-        priceAttr = adultFirstClassSeat.price;
+        priceAttr = adultFirstClassSeat["price"];
         fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
         discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
         fullPrice = parseFloat(fullPriceStr);
@@ -84,7 +84,7 @@ window.onload = function() {
 
         let outputFullPriceFCP = document.getElementById("displayFullPriceFCP");
         let outputDiscPriceFCP = document.getElementById("displayDiscPriceFCP");
-        priceAttr = concessionFirstClassSeat.price;
+        priceAttr = concessionFirstClassSeat["price"];
         fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
         discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
         fullPrice = parseFloat(fullPriceStr);
@@ -94,7 +94,7 @@ window.onload = function() {
 
         let outputFullPriceFCC = document.getElementById("displayFullPriceFCC");
         let outputDiscPriceFCC = document.getElementById("displayDiscPriceFCC");
-        priceAttr = childFirstClassSeat.price;
+        priceAttr = childFirstClassSeat["price"];
         fullPriceStr = priceAttr.match(/data-fullprice="(.*?)"/)[1];
         discPriceStr = priceAttr.match(/data-discprice="(.*?)"/)[1];
         fullPrice = parseFloat(fullPriceStr);
@@ -107,7 +107,6 @@ window.onload = function() {
 
 //Seat and Day Pricing calculation
 function calcPrice() {
-
     let seatSelectSTA = document.querySelector("#seatsSTA");
     let selectedOptionSTA = seatSelectSTA.options[seatSelectSTA.selectedIndex];
     let fullPriceSTA = selectedOptionSTA.getAttribute("data-fullprice");

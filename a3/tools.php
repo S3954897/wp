@@ -158,6 +158,7 @@
     );
 
     $seatSelection = [$adultStandardSeat, $concessionStandardSeat, $childStandardSeat, $adultFirstClassSeat, $concessionFirstClassSeat, $childFirstClassSeat];
+
 ?>
     <script>
         let adultStandardSeat = <?php echo json_encode($adultStandardSeat); ?>;
@@ -169,10 +170,25 @@
     </script>
 
 
+<?php
+    function displayDayTime($rawTime)
+    {
+        $time = displayTime($rawTime);
+        if (is_numeric($time)) {
+            echo "style='display:block'";
+        } else {
+            echo "style='display:none'";
+        }
+    }
 
 
+    //echo "Saturday - ", date("g:i a", strtotime($time . ":00"));
 
-
+    function displayTime($rawTime){
+        $time = displayTime($rawTime);
+        date("g:i a", strtotime($time . ":00"));
+    return $time;
+    }
 
 
 
@@ -188,7 +204,6 @@
 //    php print_r($_POST)
 //    SESSION Contains:
 //    print_r($_SESSION)
-
 
 
 ?>

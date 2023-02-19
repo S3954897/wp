@@ -9,7 +9,8 @@
 <!--      <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>-->
       <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
       <script src='script.js'></script>
-      <?php include 'tools.php'; ?>
+      <?php include 'tools.php';
+      unset($_SESSION["show"]);?>
 
   </head>
 
@@ -113,7 +114,7 @@
                                             <li class = "showTimes1"><?php
                                                 $time = $movie->sessionDaysAndTimes[0];
                                                 if ($time !== '-') {
-                                                    echo date("g:i a", strtotime($time . ":00"));
+                                                    echo date("g a", strtotime($time . ":00"));
                                                 } ?>
                                             </li>
                                         </ul>
@@ -122,7 +123,7 @@
                                             <li class = "showTimes2"><?php
                                                 $time = $movie->sessionDaysAndTimes[2];
                                                 if ($time !== '-'){
-                                                    echo date("g:i a", strtotime($time . ":00"));
+                                                    echo date("g a", strtotime($time . ":00"));
                                                 } ?>
                                             </li>
                                         </ul>
@@ -131,7 +132,7 @@
                                             <li class = "showTimes3"><?php
                                                 $time = $movie->sessionDaysAndTimes[5];
                                                 if ($time !== '-'){
-                                                    echo date("g:i a", strtotime($time . ":00"));
+                                                    echo date("g a", strtotime($time . ":00"));
                                                 } ?>
                                             </li>
                                         </ul>

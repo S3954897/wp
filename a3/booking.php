@@ -14,7 +14,14 @@
 
   <body>
   <?php
-    $show = $_GET["show"];
+  //maintaining show selecton whilst on the bookings page. It will reset if returning back to the index page
+    if(isset($_SESSION["show"])) {
+        $show = $_SESSION["show"];
+
+    } else {
+        $show = $_GET["show"];
+        $_SESSION["show"] = $show;
+    }
         if (isset($movies)) {
             foreach ($movies as $movie) {
                 if ($show === $movie->code){ ?>
@@ -38,6 +45,12 @@
                             <div class="selectedMovie">
                                 <div>
                                     <div class = "bookingFormArea">
+                                        <?php
+                                            // check if form data exists in session
+                                            if (isset($_SESSION['form_data'])) {
+                                                $form_data = $_SESSION['form_data'];
+                                            }
+                                        ?>
                                         <h3>Booking</h3>
                                         <h3><?php echo $movie->title ?></h3>
                                         <form id="movieBooking" onsubmit="return validateForm()" action="booking.php" method="post">
@@ -58,8 +71,9 @@
                                                         <option value="9" <?php echo $seatSelected->price; ?>>9</option>
                                                         <option value="10" <?php echo $seatSelected->price; ?>>10</option>
                                                     </select>
-                                                    <?php }
-                                                    } ?>
+                                                    <?php
+                                                }
+                                            } ?>
                                                     <fieldset onchange="calcPrice()" id="daySelection">
                                                         <legend target="_blank">Session times</legend>
                                                         <input type="radio" id="monday" name="day" value="MON" data-pricing="discprice">
@@ -168,16 +182,31 @@
                                                     </fieldset>
                                                     <h3>Customer Detail</h3>
                                                     <label for="user[name]">Full Name</label>
-                                                    <input type="text" id="user[name]" name="user[name]" placeholder="Enter your full name">
+                                                    <input type="text" id="user[name]" name="user[name]" placeholder="Enter your full name"
+                                                           value="<?php echo isset($_SESSION['form_data']['user']['name']) ? $_SESSION['form_data']['user']['name'] : ''; ?>">
                                                     <br>
                                                     <label for="user[email]">Email</label>
-                                                    <input type="text" id="user[email]" name="user[email]" placeholder="Enter your email">
+                                                    <input type="text" id="user[email]" name="user[email]" placeholder="Enter your email"
+                                                           value="<?php echo isset($_SESSION['form_data']['user']['email']) ? $_SESSION['form_data']['user']['email'] : ''; ?>">
                                                     <br>
                                                     <label for="user[mobile]">Mobile</label>
-                                                    <input type="text" id="user[mobile]" name="user[mobile]" placeholder="Enter your mobile">
+                                                    <input type="text" id="user[mobile]" name="user[mobile]" placeholder="Enter your mobile"
+                                                           value="<?php echo isset($_SESSION['form_data']['user']['mobile']) ? $_SESSION['form_data']['user']['mobile'] : ''; ?>">
                                                     <br>
                                                     <button type="submit">Submit your Booking</button>
                                         </form>
+                                        <?php
+                                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                                // your form processing logic here
+
+                                                // store the POST data in session
+                                                $_SESSION['form_data'] = $_POST;
+
+                                            // redirect to the success page
+//                                            header("Location: success.php");
+//                                            exit();
+                                            }
+                                        ?>
                                     </div>
                                     <div class="showInfoFull">
                                         <h3><?php echo $movie->title ?></h3>
@@ -202,9 +231,8 @@
                     </footer>
                 <?php }
             }
-            header("Location: index.php");
         }
+    header("Location: index.php");
   ?>
-
   </body>
 </html>
