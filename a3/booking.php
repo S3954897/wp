@@ -47,8 +47,14 @@
                                 <div>
                                     <div class = "bookingFormArea">
                                         <?php
+                                            $movieSelectCode = false;
+                                            $movieDay = false;
+                                            $movieSeatselect = false;
+                                            $userDetails = false;
+                                            $sessionTimeIndex = 0;
                                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 if (isset($_POST) && ($movie->code == $movieCodeChecker)) {
+                                                    $movieSelectCode = true;
                                                 } else {
                                                     header("Location: index.php");
                                                 }
@@ -59,30 +65,44 @@
                                                         switch ($_POST["day"]) {
                                                             case "MON":
                                                                 if (is_numeric($movie->sessionDaysAndTimes[0])) {
+                                                                    $movieDay = true;
+                                                                    $sessionTimeIndex = 0;
                                                                 }
                                                                 break;
                                                             case "TUE":
                                                                 if (is_numeric($movie->sessionDaysAndTimes[1])) {
+                                                                    $movieDay = true;
+                                                                    $sessionTimeIndex = 1;
                                                                 }
                                                                 break;
                                                             case "WED":
                                                                 if (is_numeric($movie->sessionDaysAndTimes[2])) {
+                                                                    $movieDay = true;
+                                                                    $sessionTimeIndex = 2;
                                                                 }
                                                                 break;
                                                             case "THU":
                                                                 if (is_numeric($movie->sessionDaysAndTimes[3])) {
+                                                                    $movieDay = true;
+                                                                    $sessionTimeIndex = 3;
                                                                 }
                                                                 break;
                                                             case "FRI":
                                                                 if (is_numeric($movie->sessionDaysAndTimes[4])) {
+                                                                    $movieDay = true;
+                                                                    $sessionTimeIndex = 4;
                                                                 }
                                                                 break;
                                                             case "SAT":
-                                                                if (is_numeric($movie->sessionDaysAndTimes[5])) {;
+                                                                if (is_numeric($movie->sessionDaysAndTimes[5])) {
+                                                                    $movieDay = true;
+                                                                    $sessionTimeIndex = 5;
                                                                 }
                                                                 break;
                                                             case "SUN":
                                                                 if (is_numeric($movie->sessionDaysAndTimes[6])) {
+                                                                    $movieDay = true;
+                                                                    $sessionTimeIndex = 6;
                                                                 }
                                                                 break;
                                                             default:
@@ -98,25 +118,50 @@
                                                 }
                                                 if (isset($seatSelection)) {
                                                     $aSeatSelected = 0;
+                                                    $seatAndValueIndex = 0;
+                                                    $seatTypeName = array();
+                                                    $seatTypeValue = array();
+                                                    $seatTypePrice = array();
+
                                                     foreach ($seatSelection as $seatSelected) {
                                                         $seatName = "seats{$seatSelected->seatTypeID}";
                                                         $value = (int)$_POST[$seatName];
+                                                        $seatTypeName[$seatAndValueIndex] = $seatName;
+                                                        $seatTypeValue[$seatAndValueIndex] = $value;
                                                         if (($value > 0 && $value < 11)) {
                                                             $aSeatSelected = 1;
                                                         } else if ($value < 0 || $value > 10) {
                                                             header("Location: index.php");
                                                         }
+                                                        $seatAndValueIndex ++;
                                                     }
                                                     if ($aSeatSelected == 0) {
                                                         echo '<script>showAlert("You must select a seat");</script>';
+                                                    } else if ($aSeatSelected == 1) {
+                                                        $movieSeatselect = true;
                                                     }
                                                 }
 
                                                 if (isset($_POST['user'])){
-                                                    regexCheck($_POST['user']['name'], $_POST['user']['email'], $_POST['user']['mobile']);
+                                                    $userDetails = regexCheck($_POST['user']['name'], $_POST['user']['email'], $_POST['user']['mobile']);
                                                 }
                                                 reloadData();
-                                                $form_data = $_SESSION["form_data"];
+                                                $formData = $_SESSION["form_data"];
+
+                                                if ($movieCodeChecker && $movieDay && $movieSeatselect && $userDetails) {
+//                                                    $logFile = fopen("bookings.txt");
+                                                    $currentDate = date('d-m-Y');
+                                                    echo ($movie->sessionDaysAndTimes[$sessionTimeIndex]);
+//
+                                                    $selectedMovieTime = date("g a", strtotime(($movie->sessionDaysAndTimes[$sessionTimeIndex]) . ":00"));
+                                                    $data = ($currentDate.", ".$formData['user']['name'].", ".$formData['user']['email'].", ".$formData['user']['mobile'].
+                                                        ", ".$movieCodeChecker.", ".$selectedMovieTime.", ".$seatTypeName[0].", ".$seatTypeValue[0].", ".);
+                                                    echo $data;
+
+//                                                    foutput($logFile, $data);
+
+                                                }
+
                                             }
 
                                         ?>
@@ -148,7 +193,7 @@
                                                 ?>
                                                 <fieldset onchange="calcPrice()" id="daySelection">
                                                     <legend target="_blank">Session times</legend>
-                                                    <input type="radio" id="monday" name="day" value="MON" data-pricing="discprice" <?php if (isset($form_data["day"]) && $form_data["day"] == 'MON') { echo "checked"; } ?> >
+                                                    <input type="radio" id="monday" name="day" value="MON" data-pricing="discprice" <?php if (isset($formData["day"]) && $formData["day"] == 'MON') { echo "checked"; } ?> >
                                                     <label for="monday"
                                                         <?php
                                                             $time = $movie->sessionDaysAndTimes[0];
@@ -167,7 +212,7 @@
                                                         } else {
                                                             echo 'data-pricing="fullprice"';
                                                         }
-                                                    if (isset($form_data["day"]) && $form_data["day"] == "TUE") {
+                                                    if (isset($formData["day"]) && $formData["day"] == "TUE") {
                                                         echo "checked";
                                                     } ?> >
                                                     <label for="tuesday"
@@ -187,7 +232,7 @@
                                                     } else {
                                                         echo 'data-pricing="fullprice"';
                                                     }
-                                                    if (isset($form_data["day"]) && $form_data["day"] == "WED") {
+                                                    if (isset($formData["day"]) && $formData["day"] == "WED") {
                                                         echo "checked";
                                                     } ?> >
                                                     <label for="wednesday"
@@ -206,7 +251,7 @@
                                                     } else {
                                                         echo 'data-pricing="fullprice"';
                                                     }
-                                                    if (isset($form_data["day"]) && $form_data["day"] == "THU") {
+                                                    if (isset($formData["day"]) && $formData["day"] == "THU") {
                                                         echo "checked";
                                                     } ?> >
                                                     <label for="thursday"
@@ -226,7 +271,7 @@
                                                     } else {
                                                         echo 'data-pricing="fullprice"';
                                                     }
-                                                    if (isset($form_data["day"]) && $form_data["day"] == "FRI") {
+                                                    if (isset($formData["day"]) && $formData["day"] == "FRI") {
                                                         echo "checked";
                                                     } ?> >
                                                     <label for="friday"
@@ -239,7 +284,7 @@
                                                             }
                                                         ?>
                                                     </label>
-                                                    <input type="radio" id="saturday" name="day" value="SAT" data-pricing="fullprice" <?php if (isset($form_data["day"]) && $form_data["day"] == "SAT") { echo "checked"; } ?> >
+                                                    <input type="radio" id="saturday" name="day" value="SAT" data-pricing="fullprice" <?php if (isset($formData["day"]) && $formData["day"] == "SAT") { echo "checked"; } ?> >
                                                     <label for="saturday"
                                                         <?php
                                                             $time = $movie->sessionDaysAndTimes[5];
@@ -251,7 +296,7 @@
                                                             }
                                                         ?>
                                                     </label>
-                                                    <input type="radio" id="sunday" name="day" value="SUN" data-pricing="fullprice" <?php if (isset($form_data["day"]) && $form_data["day"] == "SUN") { echo "checked"; } ?> >
+                                                    <input type="radio" id="sunday" name="day" value="SUN" data-pricing="fullprice" <?php if (isset($formData["day"]) && $formData["day"] == "SUN") { echo "checked"; } ?> >
                                                     <label for="sunday"
                                                         <?php
                                                             $time = $movie->sessionDaysAndTimes[6];

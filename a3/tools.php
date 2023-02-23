@@ -112,6 +112,16 @@
             $this->seatCode = $seatCode;
             $this->price = $price;
         }
+
+        public function getFullPrice() {
+            preg_match('/data-fullprice="(.*?)"/', $this->price, $matches);
+            return floatval($matches[1]);
+        }
+
+        public function getDiscountPrice() {
+            preg_match('/data-discprice="(.*?)"/', $this->price, $matches);
+            return floatval($matches[1]);
+        }
     }
 
     $adultStandardSeat = new SeatType (
@@ -159,6 +169,8 @@
 
     $seatSelection = [$adultStandardSeat, $concessionStandardSeat, $childStandardSeat, $adultFirstClassSeat, $concessionFirstClassSeat, $childFirstClassSeat];
 
+
+
 ?>
     <script>
         let adultStandardSeat = <?php echo json_encode($adultStandardSeat); ?>;
@@ -185,7 +197,8 @@
     //echo "Saturday - ", date("g:i a", strtotime($time . ":00"));
 
     function displayTime($rawTime){
-        $time = displayTime($rawTime);
+        $time = $rawTime;
+//        $time = displayTime($rawTime);
         date("g:i a", strtotime($time . ":00"));
     return $time;
     }
@@ -197,10 +210,14 @@
     }
 
     function regexCheck($name, $email, $phone) {
-        if ((!preg_match('/^[a-z\D]+[a-z\D]*$/i', $name))
-            ||(!preg_match('/^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,3})+$/i', $email))
-            ||(!preg_match('/^\({0,1}((0|\+61)(\ ){0,1}(2|4|3|7|8)){0,1}\){0,1}(\ ){0,1}[0-9]{2}(\ ){0,1}[0-9]{2}(\ ){0,1}[0-9]{1}(\ ){0,1}[0-9]{3}$/', $phone))) {
+        $userDetails = false;
+        if ((!(preg_match('/^[a-z\D]+[a-z\D]*$/i', $name)))
+            ||(!(preg_match('/^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,3})+$/i', $email)))
+            ||(!(preg_match('/^\({0,1}((0|\+61)(\ ){0,1}(2|4|3|7|8)){0,1}\){0,1}(\ ){0,1}[0-9]{2}(\ ){0,1}[0-9]{2}(\ ){0,1}[0-9]{1}(\ ){0,1}[0-9]{3}$/', $phone)))) {
+            //already checked at the frontend.  Any alteration at this stage would likely be a dishonest user so kick back to index.php
             header("Location: index.php");
+        } else {
+            return $userDetails = true;
         }
     }
 
