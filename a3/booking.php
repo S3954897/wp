@@ -110,7 +110,6 @@
                                                     echo "You must select a day!!";
                                                     reloadData();
                                                 }
-                                                {}
 
                                                 if (isset($seatSelection)) {
                                                     $aSeatSelected = 0;
