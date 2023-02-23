@@ -190,8 +190,13 @@
     return $time;
     }
 
-
-
+{}
+    function reloadData() {
+        $_SESSION['form_data'] = $_POST;
+        if (isset($_SESSION["form_data"])) {
+//            $form_data = $_SESSION["form_data"];
+        }
+    }
 
 
 
