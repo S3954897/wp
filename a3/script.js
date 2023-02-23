@@ -247,3 +247,6 @@ function validatePhone(mobile) {
     return phoneRegex.test(String(mobile));
 }
 
+function showAlert(message) {
+    alert (message);
+}

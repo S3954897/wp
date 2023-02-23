@@ -191,12 +191,18 @@
     }
 
     function reloadData() {
-        $_SESSION['form_data'] = $_POST;
+        $_SESSION["form_data"] = $_POST;
         if (isset($_SESSION["form_data"])) {
-//            $form_data = $_SESSION["form_data"];
         }
     }
 
+    function regexCheck($name, $email, $phone) {
+        if ((!preg_match('/^[a-z\D]+[a-z\D]*$/i', $name))
+            ||(!preg_match('/^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,3})+$/i', $email))
+            ||(!preg_match('/^\({0,1}((0|\+61)(\ ){0,1}(2|4|3|7|8)){0,1}\){0,1}(\ ){0,1}[0-9]{2}(\ ){0,1}[0-9]{2}(\ ){0,1}[0-9]{1}(\ ){0,1}[0-9]{3}$/', $phone))) {
+            header("Location: index.php");
+        }
+    }
 
 
 
