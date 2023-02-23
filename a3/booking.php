@@ -53,22 +53,90 @@
                                                 } else {
                                                     header("Location: index.php");
                                                 }
+                                                if (isset($_POST['day']) && !empty($_POST['day'])) {
+                                                    // Define an array of valid radio input values
+                                                    echo " Hit - 1";
+                                                    $validRadioValues = $movie->sessionDaysAndTimes;
+                                                    // Ch4eck if the selected value matches one of the expected values
+                                                    if (in_array($_POST['day'], ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"])) {
+                                                        // Handle the error if the selected value is not valid
+                                                        echo " Hit - 2";
+                                                        switch ($_POST['day']) {
+                                                            case "MON":
+                                                                if (is_numeric($movie->sessionDaysAndTimes[0])) {
+                                                                    echo "valid day!!!";
+                                                                }
+                                                                break;
+                                                            case "TUE":
+                                                                if (is_numeric($movie->sessionDaysAndTimes[1])) {
+                                                                    echo "valid day!!!";
+                                                                }
+                                                                break;
+                                                            case "WED":
+                                                                if (is_numeric($movie->sessionDaysAndTimes[2])) {
+                                                                    echo "valid day!!!";
+                                                                }
+                                                                break;
+                                                            case "THU":
+                                                                if (is_numeric($movie->sessionDaysAndTimes[3])) {
+                                                                    echo "valid day!!!";
+                                                                }
+                                                                break;
+                                                            case "FRI":
+                                                                if (is_numeric($movie->sessionDaysAndTimes[4])) {
+                                                                    echo "valid day!!!";
+                                                                }
+                                                                break;
+                                                            case "SAT":
+                                                                if (is_numeric($movie->sessionDaysAndTimes[5])) {
+                                                                    echo "valid day!!!";
+                                                                }
+                                                                break;
+                                                            case "SUN":
+                                                                if (is_numeric($movie->sessionDaysAndTimes[6])) {
+                                                                    echo "valid day!!!";
+                                                                }
+                                                                break;
+                                                            default:
+                                                                echo "not valid";
+                                                                break;
+                                                        }
 
-                                                // your form processing logic here
-
-                                                // store the POST data in session
-                                                $_SESSION['form_data'] = $_POST;
-
-                                                // redirect to the success page
-    //                                            header("Location: success.php");
-    //                                            exit();
-                                            }
-
-                                            // check if form data exists in session
-                                                if (isset($_SESSION["form_data"])) {
-                                                    $form_data = $_SESSION["form_data"];
-    //                                                printr($_SESSION["form_data"]);
+                                                    } else {
+                                                        // Handle the error if the radio input has not been set
+                                                        echo "Enter a day!";
+                                                    }
+                                                } else {
+                                                    echo "You must select a day!!";
+                                                    reloadData();
                                                 }
+                                                {}
+
+                                                if (isset($seatSelection)) {
+                                                    $aSeatSelected = 0;
+                                                    foreach ($seatSelection as $seatSelected) {
+                                                        $seatName = "seats{$seatSelected->seatTypeID}";
+                                                        $value = (int)$_POST[$seatName];
+                                                        echo $value;
+                                                        if (($value > 0 && $value < 11)) {
+                                                            $aSeatSelected = 1;
+                                                        } else if ($value < 0 || $value > 10) {
+                                                                echo "Hit - hacked";
+                                                        }
+                                                    }
+                                                    echo $aSeatSelected;
+                                                    if ($aSeatSelected == 1) {
+                                                        echo "a correct seat has been selected";
+                                                        reloadData();
+                                                    } else if ($aSeatSelected == 0) {
+                                                        echo "you must select a seat";
+                                                        reloadData();
+                                                    }
+                                                }
+
+                                            } else {
+                                                reloadData();
+                                            }
                                         ?>
                                         <h3>Booking</h3>
                                         <h3><?php echo $movie->title ?></h3>
@@ -80,7 +148,7 @@
                                                         foreach ($seatSelection as $seatSelected) { ?>
                                                             <label for="<?php echo $seatSelected->seatTypeID; ?>"><?php echo $seatSelected->type; ?></label>
                                                             <select onchange="calcPrice()" id="<?php echo $seatSelected->seatTypeID; ?>" name="seats<?php echo $seatSelected->seatTypeID; ?>">
-                                                                <option value="">Select an option</option>
+                                                                <option value="0">Select an option</option>
                                                                 <option value="1" <?php echo $seatSelected->price; if (isset($_SESSION["form_data"]) && isset($_SESSION["form_data"]["seats{$seatSelected->seatTypeID}"]) && $_SESSION["form_data"]["seats{$seatSelected->seatTypeID}"] == "1") {echo "selected";} ?>>1</option>
                                                                 <option value="2" <?php echo $seatSelected->price; if (isset($_SESSION["form_data"]) && isset($_SESSION["form_data"]["seats{$seatSelected->seatTypeID}"]) && $_SESSION["form_data"]["seats{$seatSelected->seatTypeID}"] == "2") {echo "selected";} ?>>2</option>
                                                                 <option value="3" <?php echo $seatSelected->price; if (isset($_SESSION["form_data"]) && isset($_SESSION["form_data"]["seats{$seatSelected->seatTypeID}"]) && $_SESSION["form_data"]["seats{$seatSelected->seatTypeID}"] == "3") {echo "selected";} ?>>3</option>
