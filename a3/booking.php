@@ -6,15 +6,15 @@
     <title>Lunardo Booking Page</title>
     
     <!-- Keep wireframe.css for debugging, add your css to style.css -->
-<!--    <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>-->
+      <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
       <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
       <script src='script.js'></script>
       <?php include 'tools.php'; ?>
   </head>
 
   <body>
-  <?php
-  //maintaining show selection whilst on the bookings page. It will reset if returning back to the index page
+    <?php
+    //maintaining show selection whilst on the bookings page. It will reset if returning back to the index page
     if(isset($_SESSION["show"])) {
         $show = $_SESSION["show"];
 
@@ -25,7 +25,10 @@
         if (isset($movies)) {
             foreach ($movies as $movie) {
                 if ($show === $movie->code){
-                    $movieCodeChecker = $movie->code ?>
+                    $movieCodeChecker = $movie->code;
+
+
+    ?>
                     <div class = "headerArea">
                       <header>
                           <h1>Lunardo</h1>
@@ -120,8 +123,10 @@
                                                     $aSeatSelected = 0;
                                                     $seatAndValueIndex = 0;
                                                     $seatTypeName = array();
+                                                    $logSeatTypeName = array();
                                                     $seatTypeValue = array();
                                                     $seatTypePrice = array();
+
 
                                                     foreach ($seatSelection as $seatSelected) {
                                                         $seatName = "seats{$seatSelected->seatTypeID}";
@@ -149,16 +154,157 @@
                                                 $formData = $_SESSION["form_data"];
 
                                                 if ($movieCodeChecker && $movieDay && $movieSeatselect && $userDetails) {
-//                                                    $logFile = fopen("bookings.txt");
                                                     $currentDate = date('d-m-Y');
-                                                    echo ($movie->sessionDaysAndTimes[$sessionTimeIndex]);
-//
+                                                    $selectedDay = $formData['day'];
+                                                    $logSeatPrice = 0;
+
+
+                                                    switch ($selectedDay){
+                                                        case "MON":
+                                                            if ($formData['monPricing'] == "discprice") {
+                                                                $seatTypePrice[0] = 16;
+                                                                $seatTypePrice[1] = 14.5;
+                                                                $seatTypePrice[2] = 13;
+                                                                $seatTypePrice[3] = 25;
+                                                                $seatTypePrice[4] = 23.5;
+                                                                $seatTypePrice[5] = 22;
+                                                            } elseif ($formData['monPricing'] == "fullprice") {
+                                                                $seatTypePrice[0] = 21.5;
+                                                                $seatTypePrice[1] = 19;
+                                                                $seatTypePrice[2] = 17.5;
+                                                                $seatTypePrice[3] = 31;
+                                                                $seatTypePrice[4] = 28;
+                                                                $seatTypePrice[5] = 25;
+                                                            }
+                                                            break;
+                                                        case "TUE":
+                                                            if ($formData['tuePricing'] == "discprice") {
+                                                                $seatTypePrice[0] = 16;
+                                                                $seatTypePrice[1] = 14.5;
+                                                                $seatTypePrice[2] = 13;
+                                                                $seatTypePrice[3] = 25;
+                                                                $seatTypePrice[4] = 23.5;
+                                                                $seatTypePrice[5] = 22;
+                                                            } elseif ($formData['tuePricing'] == "fullprice") {
+                                                                $seatTypePrice[0] = 21.5;
+                                                                $seatTypePrice[1] = 19;
+                                                                $seatTypePrice[2] = 17.5;
+                                                                $seatTypePrice[3] = 31;
+                                                                $seatTypePrice[4] = 28;
+                                                                $seatTypePrice[5] = 25;
+                                                            }
+                                                            break;
+                                                        case "WED":
+                                                            if ($formData['wedPricing'] == "discprice") {
+                                                                $seatTypePrice[0] = 16;
+                                                                $seatTypePrice[1] = 14.5;
+                                                                $seatTypePrice[2] = 13;
+                                                                $seatTypePrice[3] = 25;
+                                                                $seatTypePrice[4] = 23.5;
+                                                                $seatTypePrice[5] = 22;
+                                                            } elseif ($formData['wedPricing'] == "fullprice") {
+                                                                $seatTypePrice[0] = 21.5;
+                                                                $seatTypePrice[1] = 19;
+                                                                $seatTypePrice[2] = 17.5;
+                                                                $seatTypePrice[3] = 31;
+                                                                $seatTypePrice[4] = 28;
+                                                                $seatTypePrice[5] = 25;
+                                                            }
+                                                            break;
+                                                        case "THU":
+                                                            if ($formData['thuPricing'] == "discprice") {
+                                                                $seatTypePrice[0] = 16;
+                                                                $seatTypePrice[1] = 14.5;
+                                                                $seatTypePrice[2] = 13;
+                                                                $seatTypePrice[3] = 25;
+                                                                $seatTypePrice[4] = 23.5;
+                                                                $seatTypePrice[5] = 22;
+                                                            } elseif ($formData['thuPricing'] == "fullprice") {
+                                                                $seatTypePrice[0] = 21.5;
+                                                                $seatTypePrice[1] = 19;
+                                                                $seatTypePrice[2] = 17.5;
+                                                                $seatTypePrice[3] = 31;
+                                                                $seatTypePrice[4] = 28;
+                                                                $seatTypePrice[5] = 25;
+                                                            }
+                                                            break;
+                                                        case "FRI":
+                                                            if ($formData['friPricing'] == "discprice") {
+                                                                $seatTypePrice[0] = 16;
+                                                                $seatTypePrice[1] = 14.5;
+                                                                $seatTypePrice[2] = 13;
+                                                                $seatTypePrice[3] = 25;
+                                                                $seatTypePrice[4] = 23.5;
+                                                                $seatTypePrice[5] = 22;
+                                                            } elseif ($formData['friPricing'] == "fullprice") {
+                                                                $seatTypePrice[0] = 21.5;
+                                                                $seatTypePrice[1] = 19;
+                                                                $seatTypePrice[2] = 17.5;
+                                                                $seatTypePrice[3] = 31;
+                                                                $seatTypePrice[4] = 28;
+                                                                $seatTypePrice[5] = 25;
+                                                            }
+                                                            break;
+                                                        case "SAT":
+                                                            if ($formData['satPricing'] == "discprice") {
+                                                                $seatTypePrice[0] = 16;
+                                                                $seatTypePrice[1] = 14.5;
+                                                                $seatTypePrice[2] = 13;
+                                                                $seatTypePrice[3] = 25;
+                                                                $seatTypePrice[4] = 23.5;
+                                                                $seatTypePrice[5] = 22;
+                                                            } elseif ($formData['satPricing'] == "fullprice") {
+                                                                $seatTypePrice[0] = 21.5;
+                                                                $seatTypePrice[1] = 19;
+                                                                $seatTypePrice[2] = 17.5;
+                                                                $seatTypePrice[3] = 31;
+                                                                $seatTypePrice[4] = 28;
+                                                                $seatTypePrice[5] = 25;
+                                                            }
+                                                            break;
+                                                        case "SUN":
+                                                            if ($formData['sunPricing'] == "discprice") {
+                                                                $seatTypePrice[0] = 16;
+                                                                $seatTypePrice[1] = 14.5;
+                                                                $seatTypePrice[2] = 13;
+                                                                $seatTypePrice[3] = 25;
+                                                                $seatTypePrice[4] = 23.5;
+                                                                $seatTypePrice[5] = 22;
+                                                            } elseif ($formData['sunPricing'] == "fullprice") {
+                                                                $seatTypePrice[0] = 21.5;
+                                                                $seatTypePrice[1] = 19;
+                                                                $seatTypePrice[2] = 17.5;
+                                                                $seatTypePrice[3] = 31;
+                                                                $seatTypePrice[4] = 28;
+                                                                $seatTypePrice[5] = 25;
+                                                            }
+                                                            break;
+                                                        default:
+                                                            header("Location: index.php");
+                                                    }
+
+                                                    $seatPriceTotal = 0;
+                                                    for ($i=0; $i<6; $i++) {
+                                                        $seatPriceTotal += ($seatTypePrice[$i]*$seatTypeValue[$i]);
+                                                    }
+                                                    $seatPriceTotalGST = $seatPriceTotal/11;
+
+
                                                     $selectedMovieTime = date("g a", strtotime(($movie->sessionDaysAndTimes[$sessionTimeIndex]) . ":00"));
                                                     $data = ($currentDate.", ".$formData['user']['name'].", ".$formData['user']['email'].", ".$formData['user']['mobile'].
-                                                        ", ".$movieCodeChecker.", ".$selectedMovieTime.", ".$seatTypeName[0].", ".$seatTypeValue[0].", ".);
-                                                    echo $data;
+                                                        ", ".$movieCodeChecker.", ".$formData['day'].", ".$selectedMovieTime.", "
+                                                        .$seatTypeValue[0].", ".number_format($seatTypePrice[0]*$seatTypeValue[0],2)
+                                                        .", ".$seatTypeValue[1].", ".number_format($seatTypePrice[1]*$seatTypeValue[1],2)
+                                                        .", ".$seatTypeValue[2].", ".number_format($seatTypePrice[2]*$seatTypeValue[2],2)
+                                                        .", ".$seatTypeValue[3].", ".number_format($seatTypePrice[3]*$seatTypeValue[3],2)
+                                                        .", ".$seatTypeValue[4].", ".number_format($seatTypePrice[4]*$seatTypeValue[4],2)
+                                                        .", ".$seatTypeValue[5].", ".number_format($seatTypePrice[5]*$seatTypeValue[5],2)
+                                                        . ", ".number_format($seatPriceTotal,2).", ".number_format($seatPriceTotalGST,2)."\n");
 
-//                                                    foutput($logFile, $data);
+
+                                                    file_put_contents("bookings.txt", $data, FILE_APPEND);
+                                                    $_SESSION['data'] = $data;
+                                                    header("Location: receipt.php");
 
                                                 }
 
@@ -205,11 +351,14 @@
                                                             }
                                                         ?>
                                                     </label>
+                                                    <input type="hidden" name="monPricing" value="discprice">
                                                     <input type="radio" id="tuesday" name="day" value="TUE" <?php
                                                     $time = $movie->sessionDaysAndTimes[1];
                                                     if ($time == 12){
+                                                            $tuePricing = "discprice";
                                                             echo 'data-pricing="discprice"';
                                                         } else {
+                                                            $tuePricing = "fullprice";
                                                             echo 'data-pricing="fullprice"';
                                                         }
                                                     if (isset($formData["day"]) && $formData["day"] == "TUE") {
@@ -225,11 +374,14 @@
                                                             }
                                                         ?>
                                                     </label>
+                                                    <input type="hidden" name="tuePricing" value=<?php echo $tuePricing;?> >
                                                     <input type="radio" id="wednesday" name="day" value="WED" <?php
                                                     $time = $movie->sessionDaysAndTimes[2];
-                                                    if ($time === 12){
+                                                    if ($time == 12){
+                                                        $wedPricing = "discprice";
                                                         echo 'data-pricing="discprice"';
                                                     } else {
+                                                        $wedPricing = "fullprice";
                                                         echo 'data-pricing="fullprice"';
                                                     }
                                                     if (isset($formData["day"]) && $formData["day"] == "WED") {
@@ -244,11 +396,14 @@
                                                             }
                                                         ?>
                                                     </label>
+                                                    <input type="hidden" name="wedPricing" value=<?php echo $wedPricing;?> >
                                                     <input type="radio" id="thursday" name="day" value="THU" <?php
                                                     $time = $movie->sessionDaysAndTimes[3];
                                                     if ($time == 12){
+                                                        $thuPricing = "discprice";
                                                         echo 'data-pricing="discprice"';
                                                     } else {
+                                                        $thuPricing = "fullprice";
                                                         echo 'data-pricing="fullprice"';
                                                     }
                                                     if (isset($formData["day"]) && $formData["day"] == "THU") {
@@ -264,11 +419,14 @@
                                                             }
                                                         ?>
                                                     </label>
+                                                    <input type="hidden" name="thuPricing" value=<?php echo $thuPricing;?> >
                                                     <input type="radio" id="friday" name="day" value="FRI" <?php
                                                     $time = $movie->sessionDaysAndTimes[4];
                                                     if ($time == 12){
+                                                        $friPricing = "discprice";
                                                         echo 'data-pricing="discprice"';
                                                     } else {
+                                                        $friPricing = "fullprice";
                                                         echo 'data-pricing="fullprice"';
                                                     }
                                                     if (isset($formData["day"]) && $formData["day"] == "FRI") {
@@ -284,6 +442,7 @@
                                                             }
                                                         ?>
                                                     </label>
+                                                    <input type="hidden" name="friPricing" value=<?php echo $friPricing;?> >
                                                     <input type="radio" id="saturday" name="day" value="SAT" data-pricing="fullprice" <?php if (isset($formData["day"]) && $formData["day"] == "SAT") { echo "checked"; } ?> >
                                                     <label for="saturday"
                                                         <?php
@@ -296,6 +455,7 @@
                                                             }
                                                         ?>
                                                     </label>
+                                                    <input type="hidden" name="satPricing" value="fullprice">
                                                     <input type="radio" id="sunday" name="day" value="SUN" data-pricing="fullprice" <?php if (isset($formData["day"]) && $formData["day"] == "SUN") { echo "checked"; } ?> >
                                                     <label for="sunday"
                                                         <?php
@@ -308,6 +468,7 @@
                                                             }
                                                         ?>
                                                     </label>
+                                                    <input type="hidden" name="sunPricing" value="fullprice">
                                                 </fieldset>
                                                 <h3>Customer Detail</h3>
                                                 <label for="user[name]">Full Name</label>
@@ -326,11 +487,11 @@
                                         </form>
                                     </div>
                                     <div class="showInfoFull">
-                                        <h3><?php echo $movie->title ?></h3>
-                                        <p><?php echo $movie->descriptionFull ?></p>
-                                        <p><?php echo $movie->directors ?></p>
-                                        <p><?php echo $movie->writers ?></p>
-                                        <p><?php echo $movie->actors ?></p>
+                                        <h3><?php echo $movie->title; ?></h3>
+                                        <p><?php echo $movie->descriptionFull; ?></p>
+                                        <p><?php echo $movie->directors; ?></p>
+                                        <p><?php echo $movie->writers; ?></p>
+                                        <p><?php echo $movie->actors; ?></p>
                                     </div>
                                     <div class="trailer">
                                         <iframe src=<?php echo $movie->trailer ?></iframe>
@@ -340,11 +501,11 @@
                         </div>
                     </main>
                     <footer class="footerArea">
-                      <div>&copy;<script>
-                        document.write(new Date().getFullYear());
-                      </script> Grant Nicholas, S3954897. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
-                      <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
-                      <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
+                        <div>&copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> Grant Nicholas, S3954897. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
+                        <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
+                        <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
                     </footer>
                 <?php }
             }
