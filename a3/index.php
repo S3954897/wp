@@ -12,6 +12,8 @@
       <?php include 'tools.php';
         unset($_SESSION["show"]);
         unset($_SESSION["form_data"]);
+        unset($_SESSION['data']);
+        unset($_SESSION["show"]);
       ?>
 
   </head>
@@ -164,7 +166,18 @@
         </footer>
     </div>
 
-
+       <aside id="debug">
+          <hr>
+          <h3>Debug Area</h3>
+          <pre>
+    GET Contains:
+    <?php print_r($_GET) ?>
+    POST Contains:
+    <?php print_r($_POST) ?>
+    SESSION Contains:
+    <?php print_r($_SESSION) ?>
+          </pre>
+        </aside>
   </body>
 </html>
 

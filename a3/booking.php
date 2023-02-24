@@ -291,19 +291,31 @@
 
 
                                                     $selectedMovieTime = date("g a", strtotime(($movie->sessionDaysAndTimes[$sessionTimeIndex]) . ":00"));
-                                                    $data = ($currentDate.", ".$formData['user']['name'].", ".$formData['user']['email'].", ".$formData['user']['mobile'].
-                                                        ", ".$movieCodeChecker.", ".$formData['day'].", ".$selectedMovieTime.", "
-                                                        .$seatTypeValue[0].", ".number_format($seatTypePrice[0]*$seatTypeValue[0],2)
-                                                        .", ".$seatTypeValue[1].", ".number_format($seatTypePrice[1]*$seatTypeValue[1],2)
-                                                        .", ".$seatTypeValue[2].", ".number_format($seatTypePrice[2]*$seatTypeValue[2],2)
-                                                        .", ".$seatTypeValue[3].", ".number_format($seatTypePrice[3]*$seatTypeValue[3],2)
-                                                        .", ".$seatTypeValue[4].", ".number_format($seatTypePrice[4]*$seatTypeValue[4],2)
-                                                        .", ".$seatTypeValue[5].", ".number_format($seatTypePrice[5]*$seatTypeValue[5],2)
-                                                        . ", ".number_format($seatPriceTotal,2).", ".number_format($seatPriceTotalGST,2)."\n");
+
+
+                                                    $data = ($currentDate."\t".$formData['user']['name']."\t".$formData['user']['email']."\t".$formData['user']['mobile'].
+                                                        "\t".$movieCodeChecker."\t".$formData['day']."\t".$selectedMovieTime."\t"
+                                                        .$seatTypeValue[0]."\t".number_format($seatTypePrice[0]*$seatTypeValue[0],2)
+                                                        ."\t".$seatTypeValue[1]."\t".number_format($seatTypePrice[1]*$seatTypeValue[1],2)
+                                                        ."\t".$seatTypeValue[2]."\t".number_format($seatTypePrice[2]*$seatTypeValue[2],2)
+                                                        ."\t".$seatTypeValue[3]."\t".number_format($seatTypePrice[3]*$seatTypeValue[3],2)
+                                                        ."\t".$seatTypeValue[4]."\t".number_format($seatTypePrice[4]*$seatTypeValue[4],2)
+                                                        ."\t".$seatTypeValue[5]."\t".number_format($seatTypePrice[5]*$seatTypeValue[5],2)
+                                                        . "\t".number_format($seatPriceTotal,2)."\t".number_format($seatPriceTotalGST,2)."\n");
+                                                    $dataArray = array($currentDate,$formData['user']['name'],$formData['user']['email'], $formData['user']['mobile']
+                                                        , $movieCodeChecker, $formData['day'], $selectedMovieTime
+                                                        , $seatTypeValue[0], number_format($seatTypePrice[0]*$seatTypeValue[0],2)
+                                                        , $seatTypeValue[1], number_format($seatTypePrice[1]*$seatTypeValue[1],2)
+                                                        , $seatTypeValue[2], number_format($seatTypePrice[2]*$seatTypeValue[2],2)
+                                                        , $seatTypeValue[3], number_format($seatTypePrice[3]*$seatTypeValue[3],2)
+                                                        , $seatTypeValue[4], number_format($seatTypePrice[4]*$seatTypeValue[4],2)
+                                                        , $seatTypeValue[5], number_format($seatTypePrice[5]*$seatTypeValue[5],2)
+                                                        , number_format($seatPriceTotal,2), number_format($seatPriceTotalGST,2));
 
 
                                                     file_put_contents("bookings.txt", $data, FILE_APPEND);
-                                                    $_SESSION['data'] = $data;
+                                                    dataParse($dataArray);
+
                                                     header("Location: receipt.php");
 
                                                 }
@@ -507,8 +519,22 @@
                         <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
                         <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
                     </footer>
+                    <aside id="debug">
+                        <hr>
+                        <h3>Debug Area</h3>
+                        <pre>
+                            GET Contains:
+                            <?php print_r($_GET) ?>
+                            POST Contains:
+                            <?php print_r($_POST) ?>
+                            SESSION Contains:
+                            <?php print_r($_SESSION) ?>
+                        </pre>
+                    </aside>
+
                 <?php }
             }
+
         }
     header("Location: index.php");
   ?>
