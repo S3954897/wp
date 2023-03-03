@@ -1,0 +1,385 @@
+/* Insert your styles here */
+@import url('//fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+@import url('//fonts.googleapis.com/css2?family=Limelight&family=Orbitron:wght@600&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background: repeating-linear-gradient(90deg, #8c0202, #380000 5%, #8c0202 10%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #EFFC93;
+    margin: 0px;
+}
+
+h1, h2, h3, h4{
+    font-family: 'Limelight', cursive;
+    color: #FFFF99;
+    padding: 5px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #FFFF99;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #80C271;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 1.3rem;
+    color: #80C271;
+    margin: 0px;
+}
+
+p {
+    color: #5AACCF;
+}
+
+.headerArea{
+    display: grid;
+}
+
+header{
+    margin:auto;
+}
+
+.navArea {
+    box-sizing: border-box;
+    background-color: #80C271;
+    position: sticky;
+    top: 0px;
+    z-index:10;
+}
+
+.navGrid {
+    display: grid;
+    gap:5px;
+    max-width: 910px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto;
+    padding-inline-start: 0px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: auto;
+}
+
+nav a {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width:160px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+nav a:link,
+nav a:visited {
+    color: #EFFC93;
+    background-color: #80C271;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a:active,
+nav a:focus,
+nav a.current{
+    color: #80C271;
+    background-color: #EFFC93;
+    transition: 0.3s;
+}
+
+.mainArea{
+    min-width: 336px;
+    max-width: 910px;
+    padding: 20px;
+    margin: auto;
+}
+
+.seatsAndPricesArea,
+.aboutUsArea,
+.bookingArea,
+.showInfoFull,
+.bookingFormArea {
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: fit-content;
+    min-width: 336px;
+    max-width: 910px;
+    background-color: #0c1b2f;
+    margin: 20px auto;
+    padding: 20px
+
+}
+.showInfoFull,
+.seatsAndPricesArea h3{
+    margin: auto;
+    padding-top:20px;
+}
+
+.seatsAndPricesGrid {
+    display: grid;
+    grid-template-columns: fit-content(100%);
+    grid-template-rows: repeat(auto-fit, 1fr);
+}
+
+.seatsAndPricesArea table {
+    text-align: center;
+    background-color: #1C3F6E;
+    border-radius: 10px;
+}
+
+.seatsAndPricesArea table th {
+    color: #5AACCF;
+    padding: 10px;
+}
+
+.seatsAndPricesArea img {
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
+
+.showInfoFull {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+}
+
+.nowShowingArea {
+    box-sizing: border-box;
+    border-radius: 10px;
+    min-width: 336px;
+    max-width: 910px;
+    background-color: #0c1b2f;
+    margin: 20px auto;
+    padding: 20px
+}
+
+.nowShowingArea h2 {
+    box-sizing: border-box;
+    display: flex;
+}
+
+.nowShowingGrid {
+    display: grid;
+    gap:20px;
+    max-width: 910px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+    grid-template-rows: auto;
+}
+
+.showTitleFlex {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.showInfoGrid {
+    display: grid;
+    gap:5px;
+    max-width: 410px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: auto;
+}
+
+@media screen and (max-width: 480px ) {
+    .showInfoGrid {
+        grid-template-columns: 210px;
+    }
+    .nowShowingGrid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+}
+
+.showPlot, .showImage {
+    background-color: #1C3F6E;
+    box-sizing: border-box;
+    height: 310px;
+    padding: 10px;
+    border-radius: 20px;
+    width: auto;
+    margin: auto;
+}
+.showPlot p {
+    font-size: .9rem;
+    color: ghostwhite;
+}
+
+.showImage img {
+    width: inherit;
+
+}
+
+.showDetails {
+    font-size: .9rem;
+    margin: 0px;
+}
+
+.showDetails span {
+    font-size: .9rem;
+    margin-top: 0px;
+    color: #5AACCF;
+    padding-bottom: 20px;
+}
+
+#bookNowButton {
+    font-family: 'Orbitron', sans-serif;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: auto;
+    color: #EFFC93;
+    background-color: #80C271;
+}
+
+#bookNowButton:link,
+#bookNowButton:visited {
+    color: #EFFC93;
+    background-color: #80C271;
+}
+
+#bookNowButton:hover,
+#bookNowButton:active,
+#bookNowButton:focus {
+    color: #80C271;
+    background-color: #EFFC93;
+}
+
+.card3D {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height:310px;
+    overflow: auto;
+}
+
+.card3D > div:nth-child(1) {
+    transform: rotateY(0deg);
+}
+
+.card3D > div:nth-child(2) {
+    transform: rotateY(180deg);
+}
+
+.card3D:hover > div:nth-child(1) {
+    transform: rotateY(180deg);
+}
+
+.card3D:hover > div:nth-child(2) {
+    transform: rotateY(360deg);
+}
+
+.card3D > div {
+    height: calc(100%);
+    width: calc(100%);
+    position: absolute;
+    transition: 4s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    margin: auto;
+}
+
+
+.trailer {
+    position: relative;
+    overflow: hidden;
+    max-width: 690px;
+    min-width: 200px;
+    padding-top: 52.25%;
+    margin: auto;
+}
+.trailer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+    height: auto;
+    aspect-ratio: 16/9;
+
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+}
+
+fieldset {
+    display:grid;
+    width: fit-content;
+    margin: 10px auto;
+    border-width: 0;
+}
+
+fieldset legend {
+    font-family: Limelight;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #EFFC93;
+
+}
+
+fieldset input[type="radio"] + label {
+    color: #EFFC93;
+    background-color: #80C271;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.5s;
+    text-align: center;
+
+}
+
+fieldset input[type="radio"]:checked + label {
+    color: #80C271;
+    background-color: #EFFC93;
+
+    border-bottom: solid;
+    border-right: solid;
+    border-bottom-color: lightslategrey;
+    border-right-color: lightslategrey;
+    border-top: solid;
+    border-left: solid;
+    border-top-color: black;
+    border-left-color: black;
+
+}
+
+fieldset input[type="radio"]{
+    display: none;
+}
+
+.footerArea {
+    box-sizing: border-box;
+    background-color: #80C271;
+    padding: 20px;
+    font-size: 12px;
+    position: relative;
+    align-self: end;
+}
+
