@@ -250,3 +250,24 @@ function validatePhone(mobile) {
 function showAlert(message) {
     alert (message);
 }
+const rememberMeCheckbox = document.getElementById('remember-me');
+rememberMeCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        const name = document.getElementById('user[name]').value;
+        const email = document.getElementById('user[email]').value;
+        const phone = document.getElementById('user[mobile]').value;
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('phone', phone);
+    } else {
+        localStorage.removeItem('name');
+        localStorage.removeItem('email');
+        localStorage.removeItem('phone');
+    }
+});
+if (localStorage.getItem('name') && localStorage.getItem('email') && localStorage.getItem('phone')) {
+    document.getElementById('user[name]').value = localStorage.getItem('name');
+    document.getElementById('user[email]').value = localStorage.getItem('email');
+    document.getElementById('user[mobile]').value = localStorage.getItem('phone');
+    document.getElementById('remember-me').checked = true;
+}

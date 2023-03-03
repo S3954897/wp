@@ -495,6 +495,15 @@
                                                 <input type="text" id="user[mobile]" name="user[mobile]" placeholder="Enter your mobile"
                                                        value="<?php echo isset($_SESSION['form_data']['user']['mobile']) ? $_SESSION['form_data']['user']['mobile'] : ''; ?>">
                                                 <br>
+                                                <div>
+                                                    <label>
+                                                        <input type="radio" name="remember-me" value="remember"> Remember me
+                                                    </label>
+                                                    <label>
+                                                        <input type="radio" name="remember-me" value="forget"> Forget me
+                                                    </label>
+                                                </div>
+                                                <br>
                                                 <button type="submit">Submit your Booking</button>
                                         </form>
                                     </div>
