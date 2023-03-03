@@ -497,10 +497,10 @@
                                                 <br>
                                                 <div>
                                                     <label>
-                                                        <input type="radio" name="remember-me" value="remember"> Remember me
+                                                        <input type="radio" id="remember-me" name="remember-me" value="remember"> Remember me
                                                     </label>
                                                     <label>
-                                                        <input type="radio" name="remember-me" value="forget"> Forget me
+                                                        <input type="radio" id="remember-me" name="remember-me" value="forget"> Forget me
                                                     </label>
                                                 </div>
                                                 <br>
