@@ -500,7 +500,7 @@
                                                         <label for="remember-me">Remember me </label>
                                                         <input type="radio" id="remember-me" name="remember-me" value="remember">
                                                         <label for="remember-me">Forget me </label>
-                                                        <input type="radio" id="remember-me" name="remember-me" value="forget">
+                                                        <input type="radio" id="forget-me" name="remember-me" value="forget">
                                                     </fieldset>
 
                                                 </div>
