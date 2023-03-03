@@ -496,12 +496,13 @@
                                                        value="<?php echo isset($_SESSION['form_data']['user']['mobile']) ? $_SESSION['form_data']['user']['mobile'] : ''; ?>">
                                                 <br>
                                                 <div>
-                                                    <label>
-                                                        <input type="radio" id="remember-me" name="remember-me" value="remember"> Remember me
-                                                    </label>
-                                                    <label>
-                                                        <input type="radio" id="remember-me" name="remember-me" value="forget"> Forget me
-                                                    </label>
+                                                    <fieldset>
+                                                        <label for="remember-me">Remember me </label>
+                                                        <input type="radio" id="remember-me" name="remember-me" value="remember">
+                                                        <label for="remember-me">Forget me </label>
+                                                        <input type="radio" id="remember-me" name="remember-me" value="forget">
+                                                    </fieldset>
+
                                                 </div>
                                                 <br>
                                                 <button type="submit">Submit your Booking</button>
