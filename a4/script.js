@@ -251,27 +251,54 @@ function showAlert(message) {
     alert (message);
 }
 
+// Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-    const rememberMeCheckbox = document.getElementsByName("remember-me");
-    rememberMeCheckbox.addEventListener("change", function() {
-        console.log("Hit");
+    // Get the "Remember me" checkbox
+    console.log("Hit 1");
+    const rememberMeCheckbox = document.getElementById('rememberMe');
+    const forgetMeCheckbox = document.getElementById('forgetMe');
+
+    // Add an event listener to the "Remember me" checkbox
+    rememberMeCheckbox.addEventListener('change', function() {
+        console.log(this.checked);
+
         if (this.checked) {
+            console.log("Hit 3");
+            // Get the user details from the form
             const name = document.getElementById('user[name]').value;
             const email = document.getElementById('user[email]').value;
             const phone = document.getElementById('user[mobile]').value;
+
+            // Store the user details in local storage
             localStorage.setItem('name', name);
             localStorage.setItem('email', email);
             localStorage.setItem('phone', phone);
         } else {
+            console.log("Hit 4");
+            // Clear the user details from local storage
             localStorage.removeItem('name');
             localStorage.removeItem('email');
             localStorage.removeItem('phone');
         }
     });
+
+    forgetMeCheckbox.addEventListener('change', function() {
+        console.log(this.checked);
+
+        if (this.checked) {
+            console.log("Hit 4");
+            // Clear the user details from local storage
+            localStorage.removeItem('name');
+            localStorage.removeItem('email');
+            localStorage.removeItem('phone');
+        }
+    });
+
+    // Check if the user's details should be remembered
     if (localStorage.getItem('name') && localStorage.getItem('email') && localStorage.getItem('phone')) {
         document.getElementById('user[name]').value = localStorage.getItem('name');
         document.getElementById('user[email]').value = localStorage.getItem('email');
         document.getElementById('user[mobile]').value = localStorage.getItem('phone');
-        document.getElementById('remember-me').checked = true;
+        rememberMeCheckbox.checked = true;
     }
 });

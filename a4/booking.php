@@ -497,10 +497,10 @@
                                                 <br>
                                                 <div>
                                                     <fieldset>
-                                                        <input type="radio" id=remember-me" name="remember-me" value="remember" checked="checked">
-                                                        <label for="remember-me">Remember me</label>
-                                                        <input type="radio" id="forget-me"  name="remember-me" value="forget">
-                                                        <label for="forget-me">Forget me</label>
+                                                        <input type="radio" id="rememberMe" name="rememberMe">
+                                                        <label for="rememberMe">Remember me</label>
+                                                        <input type="radio" id="forgetMe" name="rememberMe">
+                                                        <label for="forgetMe">Forget me</label>
                                                     </fieldset>
                                                 </div>
                                                 <br>
