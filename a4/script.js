@@ -252,7 +252,7 @@ function showAlert(message) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const rememberMeCheckbox = document.getElementById("remember-me");
+    const rememberMeCheckbox = document.getElementsByName("remember-me");
     rememberMeCheckbox.addEventListener("change", function() {
         console.log("Hit");
         if (this.checked) {

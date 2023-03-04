@@ -497,12 +497,11 @@
                                                 <br>
                                                 <div>
                                                     <fieldset>
-                                                        <label for="remember-me">Remember me </label>
-                                                        <input type="radio" id="remember-me" name="remember-me" value="remember">
-                                                        <label for="remember-me">Forget me </label>
-                                                        <input type="radio" id="forget-me" name="remember-me" value="forget">
+                                                        <input type="radio" id=remember-me" name="remember-me" value="remember" checked="checked">
+                                                        <label for="remember-me">Remember me</label>
+                                                        <input type="radio" id="forget-me"  name="remember-me" value="forget">
+                                                        <label for="forget-me">Forget me</label>
                                                     </fieldset>
-
                                                 </div>
                                                 <br>
                                                 <button type="submit">Submit your Booking</button>
