@@ -506,6 +506,7 @@
                                                 <br>
                                                 <button type="submit">Submit your Booking</button>
                                         </form>
+
                                     </div>
                                     <div class="showInfoFull">
                                         <h3><?php echo $movie->title; ?></h3>
